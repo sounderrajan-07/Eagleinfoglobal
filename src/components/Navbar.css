@@ -1,0 +1,202 @@
+/* Navbar container */
+.navbar {
+  background: var(--blue-gradient);
+  padding: 10px 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  position: fixed;
+  width: 100%;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Container */
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1400px;
+  margin: auto;
+  width: 100%;
+  position: relative; /* important for mobile menu */
+}
+
+/* Logo */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo-img {
+  height: 60px;
+  width: auto;
+  transition: transform 0.3s ease;
+}
+
+.logo-img:hover {
+  transform: scale(1.05);
+}
+
+/* Menu button */
+.menu-btn {
+  display: none;
+  font-size: 28px;
+  background: none;
+  border: none;
+  color: var(--premium-gold);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.menu-btn:hover {
+  transform: scale(1.1);
+}
+
+/* Menu */
+.navbar-menu {
+  display: flex;
+  gap: 25px;
+}
+
+.navbar-item {
+  color: var(--white);
+  font-size: 17px;
+  text-decoration: none;
+  font-weight: 600;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+/* Hover underline animation */
+.navbar-item::after {
+  
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: var(--premium-gold);
+  transition: width 0.3s ease;
+}
+
+.navbar-item:hover::after {
+  width: 100%;
+}
+
+.navbar-item:hover {
+  /* Sampled Gradient from your Screenshot */
+  background: linear-gradient(
+    to bottom, 
+    #53361a 0%,    /* Dark top bevel */
+    #936e3c 30%,   /* Mid-tone bronze */
+    #f3d898 48%,   /* Bright horizon highlight */
+    #4a2c10 52%,   /* Sharp dark shadow line */
+    #b28a4c 85%,   /* Lower gold reflection */
+    #2c1a0a 100%   /* Bottom edge deep shadow */
+  ) !important;
+
+  /* Clip background to text */
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  color: transparent !important;
+
+  /* 3D Chisel & Shadow Filters */
+  filter: 
+    drop-shadow(1px 1px 0px #fcebbc) /* Top-left highlight */
+    drop-shadow(-1px -1px 0px #1a0f05) /* Bottom-right deep bevel */
+}
+
+/* Active link */
+.navbar-item.active {
+   /* Sampled Gradient from your Screenshot */
+  background: linear-gradient(
+    to bottom, 
+    #53361a 0%,    /* Dark top bevel */
+    #936e3c 30%,   /* Mid-tone bronze */
+    #f3d898 48%,   /* Bright horizon highlight */
+    #4a2c10 52%,   /* Sharp dark shadow line */
+    #b28a4c 85%,   /* Lower gold reflection */
+    #2c1a0a 100%   /* Bottom edge deep shadow */
+  ) !important;
+
+  /* Clip background to text */
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  color: transparent !important;
+
+  /* 3D Chisel & Shadow Filters */
+  filter: 
+    drop-shadow(1px 1px 0px #fcebbc) /* Top-left highlight */
+    drop-shadow(-1px -1px 0px #1a0f05) /* Bottom-right deep bevel */
+}
+
+/* ---------------- MOBILE ---------------- */
+@media (max-width: 768px) {
+  .menu-btn {
+    display: block;
+  }
+
+  .navbar-menu {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: var(--blue-gradient);
+
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 0;
+
+    /* smooth dropdown */
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.4s ease;
+  }
+
+  .navbar-menu.active {
+    max-height: 500px;
+    opacity: 1;
+  }
+
+  .navbar-item {
+    padding: 10px 0;
+    font-size: 18px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .logo-img {
+    height: 50px;
+  }
+}
+
+/* ---------------- TABLET ---------------- */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .navbar-menu {
+    gap: 18px;
+  }
+
+  .navbar-item {
+    font-size: 15px;
+  }
+
+  .logo-img {
+    height: 55px;
+  }
+}
+
+/* ---------------- LARGE DESKTOP ---------------- */
+@media (min-width: 1400px) {
+  .navbar-item {
+    font-size: 18px;
+  }
+
+  .logo-img {
+    height: 65px;
+  }
+}

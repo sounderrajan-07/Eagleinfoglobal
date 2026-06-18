@@ -1,0 +1,28 @@
+/* Custom Glow Cursor styling to match dezvolta.com's aura */
+
+.glow-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9998; /* Ensures it sits on top of most elements but doesn't block clicks */
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  
+  /* A beautiful, deep teal gradient that is highly visible on white backgrounds 
+     without needing destructive mix-blend-modes */
+  background: radial-gradient(circle, rgba(15, 150, 120, 0.45) 0%, rgba(15, 150, 120, 0) 60%);
+  filter: blur(40px);
+  
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  will-change: transform;
+}
+
+.glow-cursor.visible {
+  opacity: 1;
+}
+
+/* We deliberately DO NOT hide the default cursor. 
+   The glow acts as a flashlight aura that follows the standard pointer. */
