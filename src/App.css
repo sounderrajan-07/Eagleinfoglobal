@@ -182,15 +182,47 @@ p { font-size: clamp(1rem, 2vw, 1.125rem); line-height: 1.6; }
   transform-origin: bottom right;
 }
 
-/* Remove hover movement/tilt/scale effects for all cards globally */
+/* Unified Card Base Style (for transition and GPU acceleration) */
+div[class$="-card"]:not(.floating-card),
+div[class*="-card "]:not(.floating-card),
+div.card:not(.floating-card),
+div.metric,
+div.detail-section,
+.card-3d, .team-card, .timeline-content,
+.story-card, .expert-card, .success-card, .process-card,
+.service-card, .process-phase, .process-step,
+.highlight-card, .product-image-card, .contact-info-card,
+.location-card, .value-card,
+.result-item, .highlight-item, .info-item, .benefit-item,
+.destination-main, .project-main {
+  box-shadow: 0 10px 30px #060024 !important;
+  border: 1px solid rgba(255, 215, 0, 0.2) !important;
+  transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), 
+              box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), 
+              border-color 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+  border-radius: 15px; /* Keeps the corners rounded properly */
+  backface-visibility: hidden;
+  will-change: transform, box-shadow;
+}
+
+/* Unified Card Hover Style */
+div[class$="-card"]:not(.floating-card):hover,
+div[class*="-card "]:not(.floating-card):hover,
+div.card:not(.floating-card):hover,
+div.metric:hover,
+div.detail-section:hover,
 .card-3d:hover, .team-card:hover, .timeline-content:hover,
 .story-card:hover, .expert-card:hover, .success-card:hover,
 .process-card:hover, .service-card:hover, .process-phase:hover,
 .process-step:hover, .metric-card:hover, .opportunity-card:hover,
 .stat-card:hover, .product-card:hover, .contact-info-card:hover,
+.location-card:hover, .value-card:hover,
 .result-item:hover, .highlight-item:hover, .info-item:hover,
-.benefit-item:hover, .destination-main:hover, .project-main:hover {
-  transform: none !important;
+.benefit-item:hover, .destination-main:hover, .project-main:hover,
+.highlight-card:hover, .product-image-card:hover {
+  transform: translateY(-8px) !important;
+  box-shadow: 0 20px 40px rgba(6, 0, 36, 0.6), 0 0 25px rgba(255, 215, 0, 0.25) !important;
+  border-color: rgba(255, 215, 0, 0.6) !important;
 }
 
 /* Global Hero Shadow */
@@ -215,28 +247,6 @@ p { font-size: clamp(1rem, 2vw, 1.125rem); line-height: 1.6; }
   animation: pulse3d 3s ease-in-out infinite;
   display: inline-block;
   perspective: 1000px;
-}
-
-/* Global Drop Shadow for all cards except hero cards */
-div[class$="-card"]:not(.floating-card),
-div[class*="-card "]:not(.floating-card),
-div.card:not(.floating-card),
-div.metric,
-div.detail-section {
-  /* Exact same CSS from the timeline sample card */
-  box-shadow: 0 10px 30px #060024 !important;
-  border: 1px solid rgba(255, 215, 0, 0.2) !important;
-  transition: all 0.3s ease !important;
-  border-radius: 15px; /* Keeps the corners rounded properly */
-}
-
-div[class$="-card"]:not(.floating-card):hover,
-div[class*="-card "]:not(.floating-card):hover,
-div.card:not(.floating-card):hover,
-div.metric:hover,
-div.detail-section:hover {
-  /* Hover shadow effect (transform removed to fix vibration/jitter issues) */
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15) !important;
 }
 
 /* Fix the broken golden hover shine glitch */
