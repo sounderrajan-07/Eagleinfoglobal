@@ -148,7 +148,7 @@ function FluidBackground() {
         height: '100vh',
         zIndex: 9999, // Render on top but let pointer events pass through
         pointerEvents: 'none',
-        opacity: 0.35, // Lower opacity for an elegant, subtle watermark-like watercolor trail
+        opacity: 0.50, // Moderately higher opacity for a slightly brighter, more vibrant trail
       }}
     />
   );
