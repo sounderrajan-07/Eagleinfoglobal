@@ -193,7 +193,6 @@ div.detail-section,
 .service-card, .process-phase, .process-step,
 .highlight-card, .product-image-card, .contact-info-card,
 .location-card, .value-card,
-.result-item, .highlight-item, .info-item, .benefit-item,
 .destination-main, .project-main {
   box-shadow: 0 10px 30px #060024 !important;
   border: 1px solid rgba(255, 215, 0, 0.2) !important;
@@ -217,8 +216,7 @@ div.detail-section:hover,
 .process-step:hover, .metric-card:hover, .opportunity-card:hover,
 .stat-card:hover, .product-card:hover, .contact-info-card:hover,
 .location-card:hover, .value-card:hover,
-.result-item:hover, .highlight-item:hover, .info-item:hover,
-.benefit-item:hover, .destination-main:hover, .project-main:hover,
+.destination-main:hover, .project-main:hover,
 .highlight-card:hover, .product-image-card:hover {
   transform: translateY(-8px) !important;
   box-shadow: 0 20px 40px rgba(6, 0, 36, 0.6), 0 0 25px rgba(255, 215, 0, 0.25) !important;
