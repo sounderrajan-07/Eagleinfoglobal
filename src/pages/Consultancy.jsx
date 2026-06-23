@@ -15,7 +15,7 @@ function Consultancy() {
       features: ["Global Placements", "Expert Guidance", "Personalized Matching", "Hiring Network"],
       benefits: ["Career Growth", "Salary Boost", "Work Permit", "Global Exposure"],
       process: ["Profile Review", "Job Matching", "Permit Support", "Final Placement"],
-      imageSection: { image: "/images/Consultancy/passport.jpg" }
+      imageSection: { image: "/images/Consultancy/case-passport.png" }
     },
 
     {
@@ -25,7 +25,7 @@ function Consultancy() {
       features: ["Market Analysis", "Competitive Intelligence", "Growth Strategy", "Risk Assessment"],
       benefits: ["Increased Revenue", "Market Leadership", "Operational Efficiency", "Sustainable Growth"],
       process: ["Discovery Phase", "Strategy Development", "Implementation Planning", "Performance Monitoring"],
-      imageSection: { image: "/images/Consultancy/passport.jpg" }
+      imageSection: { image: "/images/Consultancy/case-passport.png" }
     },
     {
       title: "Digital Transformation",
@@ -34,7 +34,7 @@ function Consultancy() {
       features: ["Technology Assessment", "Digital Strategy", "Process Automation", "Change Management"],
       benefits: ["Enhanced Productivity", "Cost Reduction", "Better Customer Experience", "Competitive Advantage"],
       process: ["Current State Analysis", "Digital Roadmap", "Technology Implementation", "Training & Support"],
-      imageSection: { image: "/images/Consultancy/passport.jpg" }
+      imageSection: { image: "/images/Consultancy/case-passport.png" }
     },
     {
       title: "Market Entry Strategy",
@@ -43,7 +43,7 @@ function Consultancy() {
       features: ["Market Research", "Entry Strategy", "Local Partnerships", "Regulatory Compliance"],
       benefits: ["Faster Market Entry", "Reduced Risk", "Local Market Knowledge", "Regulatory Compliance"],
       process: ["Market Assessment", "Entry Planning", "Partnership Development", "Launch Execution"],
-      imageSection: { image: "/images/Consultancy/passport.jpg" }
+      imageSection: { image: "/images/Consultancy/case-passport.png" }
     },
     {
       title: "Operational Excellence",
@@ -52,7 +52,7 @@ function Consultancy() {
       features: ["Process Optimization", "Quality Management", "Supply Chain", "Performance Metrics"],
       benefits: ["Cost Savings", "Quality Improvement", "Faster Delivery", "Customer Satisfaction"],
       process: ["Process Mapping", "Gap Analysis", "Optimization Design", "Implementation Support"],
-      imageSection: { image: "/images/Consultancy/passport.jpg" }
+      imageSection: { image: "/images/Consultancy/case-passport.png" }
     }
   ];
 

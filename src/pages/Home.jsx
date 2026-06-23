@@ -117,6 +117,28 @@ function Home() {
         </div>
       </section>
 
+      {/* 💡 Innovation/Bulb Section */}
+      <section className="bulb-section">
+        <div className="container">
+          <div
+            id="animate-bulb-section"
+            className={`bulb-container ${
+              isVisible['animate-bulb-section'] ? 'animate-fade-up' : ''
+            }`}
+          >
+            <div className="bulb-image-wrapper">
+              <img src="/images/about/bulb-transparent.png" alt="Innovation and Ideas" className="bulb-image" />
+            </div>
+            <div className="bulb-text-wrapper">
+              <h2 className="bulb-title">Lighting the Path to Success</h2>
+              <p className="bulb-description">
+                We bring bright ideas and innovative strategies to illuminate your business potential. Let our expert guidance be the catalyst for your next big breakthrough.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* 🧩 Services Section */}
       <section className="services-section">
         <div className="container">

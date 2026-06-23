@@ -304,45 +304,68 @@ function Export() {
         </div>
       </section>
 
-      <section 
+     <section 
         id="global-trade-monitor"
-        className={`trade-section ${isVisible['animate-hero-visual'] ? 'animate-fade-right' : ''}`}
+        className="trade-section"
       >
-        <div className="trade-dashboard">
-          <header className="dashboard-header">
-            <h3 className="dashboard-title">Global Trade Monitor</h3>
-            <span className="dashboard-status">🟢 Live</span>
-          </header>
-
-          <div className="world-map">
-            <div className="trade-route route-1">
-              <div className="route-dot start"></div>
-              <div className="route-line"></div>
-              <div className="route-dot end"></div>
-            </div>
-            <div className="trade-route route-2">
-              <div className="route-dot start"></div>
-              <div className="route-line"></div>
-              <div className="route-dot end"></div>
-            </div>
-            <div className="trade-route route-3">
-              <div className="route-dot start"></div>
-              <div className="route-line"></div>
-              <div className="route-dot end"></div>
-            </div>
-          </div>
-
-          <div className="trade-stats">
-            {tradeStatistics.map((stat, index) => (
-              <div key={index} className="trade-stat">
-                <span className="stat-icon">{stat.icon}</span>
-                <div className="stat-info">
-                  <span className="stat-value">{stat.value}</span>
-                  <span className="stat-label">{stat.label}</span>
-                  <span className="stat-growth">{stat.growth}</span>
+        <div className="container">
+          <div 
+            id="animate-trade-monitor"
+            className={`trade-grid ${isVisible['animate-trade-monitor'] ? 'animate-fade-up' : ''}`}
+          >
+            <div className="trade-visual-wrapper">
+              <div className="trade-animation-container">
+                <div className="glow-effect"></div>
+                <img 
+                  src="/images/animation.png" 
+                  alt="Global Trade Animation" 
+                  className="trade-animation-img" 
+                />
+                <div className="orbiting-particles">
+                  <div className="particle p1"></div>
+                  <div className="particle p2"></div>
+                  <div className="particle p3"></div>
                 </div>
               </div>
-            ))}
+            </div>
+
+            <div className="trade-dashboard">
+              <header className="dashboard-header">
+                <h3 className="dashboard-title">Global Trade Monitor</h3>
+                <span className="dashboard-status">🟢 Live</span>
+              </header>
+
+              <div className="world-map">
+                <div className="trade-route route-1">
+                  <div className="route-dot start"></div>
+                  <div className="route-line"></div>
+                  <div className="route-dot end"></div>
+                </div>
+                <div className="trade-route route-2">
+                  <div className="route-dot start"></div>
+                  <div className="route-line"></div>
+                  <div className="route-dot end"></div>
+                </div>
+                <div className="trade-route route-3">
+                  <div className="route-dot start"></div>
+                  <div className="route-line"></div>
+                  <div className="route-dot end"></div>
+                </div>
+              </div>
+
+              <div className="trade-stats">
+                {tradeStatistics.map((stat, index) => (
+                  <div key={index} className="trade-stat">
+                    <span className="stat-icon">{stat.icon}</span>
+                    <div className="stat-info">
+                      <span className="stat-value">{stat.value}</span>
+                      <span className="stat-label">{stat.label}</span>
+                      <span className="stat-growth">{stat.growth}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>

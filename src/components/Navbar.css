@@ -1,6 +1,9 @@
 /* Navbar container */
 .navbar {
-  background: var(--blue-gradient);
+  background: 
+    url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMDAnIGhlaWdodD0nMTAwJyB2aWV3Qm94PScwIDAgMTAwIDEwMCc+PHBvbHlnb24gcG9pbnRzPScwLDAgNTAsMCAyNSw1MCcgZmlsbD0ncmdiYSgyNTUsMjU1LDI1NSwwLjA1KScgLz48cG9seWdvbiBwb2ludHM9JzUwLDAgMTAwLDAgNzUsNTAnIGZpbGw9J3JnYmEoMjU1LDI1NSwyNTUsMC4xMSknIC8+PHBvbHlnb24gcG9pbnRzPScyNSw1MCA3NSw1MCA1MCwxMDAnIGZpbGw9J3JnYmEoMjU1LDI1NSwyNTUsMC4wNyknIC8+PHBvbHlnb24gcG9pbnRzPScwLDAgMjUsNTAgMCwxMDAnIGZpbGw9J3JnYmEoMjU1LDI1NSwyNTUsMC4wMyknIC8+PHBvbHlnb24gcG9pbnRzPScxMDAsMCA3NSw1MCAxMDAsMTAwJyBmaWxsPSdyZ2JhKDI1NSwyNTUsMjU1LDAuMDgpJyAvPjxwb2x5Z29uIHBvaW50cz0nMCwxMDAgNTAsMTAwIDI1LDUwJyBmaWxsPSdyZ2JhKDI1NSwyNTUsMjU1LDAuMTApJyAvPjxwb2x5Z29uIHBvaW50cz0nNTAsMTAwIDEwMCwxMDAgNzUsNTAnIGZpbGw9J3JnYmEoMjU1LDI1NSwyNTUsMC4wNiknIC8+PHBvbHlnb24gcG9pbnRzPSc1MCwwIDI1LDUwIDc1LDUwJyBmaWxsPSdyZ2JhKDI1NSwyNTUsMjU1LDAuMTQpJyAvPjwvc3ZnPg==") repeat, 
+    var(--blue-gradient);
+  background-size: 150px 150px, auto; /* Keep the low-poly triangles proportional */
   padding: 10px 20px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
   position: fixed;
@@ -144,7 +147,10 @@
     top: 70px;
     left: 0;
     width: 100%;
-    background: var(--blue-gradient);
+    background: 
+      url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMDAnIGhlaWdodD0nMTAwJyB2aWV3Qm94PScwIDAgMTAwIDEwMCc+PHBvbHlnb24gcG9pbnRzPScwLDAgNTAsMCAyNSw1MCcgZmlsbD0ncmdiYSgyNTUsMjU1LDI1NSwwLjA1KScgLz48cG9seWdvbiBwb2ludHM9JzUwLDAgMTAwLDAgNzUsNTAnIGZpbGw9J3JnYmEoMjU1LDI1NSwyNTUsMC4xMSknIC8+PHBvbHlnb24gcG9pbnRzPScyNSw1MCA3NSw1MCA1MCwxMDAnIGZpbGw9J3JnYmEoMjU1LDI1NSwyNTUsMC4wNyknIC8+PHBvbHlnb24gcG9pbnRzPScwLDAgMjUsNTAgMCwxMDAnIGZpbGw9J3JnYmEoMjU1LDI1NSwyNTUsMC4wMyknIC8+PHBvbHlnb24gcG9pbnRzPScxMDAsMCA3NSw1MCAxMDAsMTAwJyBmaWxsPSdyZ2JhKDI1NSwyNTUsMjU1LDAuMDgpJyAvPjxwb2x5Z29uIHBvaW50cz0nMCwxMDAgNTAsMTAwIDI1LDUwJyBmaWxsPSdyZ2JhKDI1NSwyNTUsMjU1LDAuMTApJyAvPjxwb2x5Z29uIHBvaW50cz0nNTAsMTAwIDEwMCwxMDAgNzUsNTAnIGZpbGw9J3JnYmEoMjU1LDI1NSwyNTUsMC4wNiknIC8+PHBvbHlnb24gcG9pbnRzPSc1MCwwIDI1LDUwIDc1LDUwJyBmaWxsPSdyZ2JhKDI1NSwyNTUsMjU1LDAuMTQpJyAvPjwvc3ZnPg==") repeat, 
+      var(--blue-gradient);
+    background-size: 150px 150px, auto;
 
     flex-direction: column;
     align-items: center;

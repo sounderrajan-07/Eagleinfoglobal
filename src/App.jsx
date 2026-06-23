@@ -10,12 +10,14 @@ import Export from './pages/Export';
 import BankLoan from './pages/BankLoan';
 import Contact from './pages/Contact';
 import WhatsAppButton from './components/WhatsAppButton';
+import FluidBackground from './components/FluidBackground';
 import './App.css';
 
 function App() {
   return (
     <Router>
       <div className="App">
+        <FluidBackground />
         <Navbar />
         <main className="main-content">
           <Routes>

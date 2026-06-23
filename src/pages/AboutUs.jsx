@@ -110,9 +110,7 @@ function AboutUs() {
             </div>
           </div>
         </div>
-        <div className="bulb-image-container">
-          <img src="/images/about/bulb.jpg" alt="Glowing Bulb" className="hover-bulb" />
-        </div>
+
         <div className="container">
           <div 
             id="animate-hero"

@@ -232,11 +232,112 @@
 }
 
 /* Section wrapper */
-#global-trade-monitor {
+.trade-section {
+  padding: 120px 0;
+  background: linear-gradient(180deg, #f0f4ff 0%, #e0e7ff 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Two-column layout */
+.trade-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 50px;
+  align-items: center; /* Revert back to center alignment */
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.trade-grid.animate-fade-up {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Left Column: Visual Animation Wrapper */
+.trade-visual-wrapper {
   display: flex;
   justify-content: center;
-  padding: 80px 20px;
-  background: linear-gradient(180deg, #f0f4ff 0%, #e0e7ff 100%);
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+
+.trade-animation-container {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  aspect-ratio: 1; /* Keep it perfectly square for circular glow and orbit */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: premium-float 6s ease-in-out infinite;
+  transition: all 0.5s ease;
+}
+
+.trade-animation-container:hover {
+  transform: scale(1.03);
+}
+
+.trade-animation-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  z-index: 2;
+  filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.12));
+  animation: exportGlobeRotate360 12s linear infinite;
+  transform-style: preserve-3d;
+}
+
+/* Glowing Aura Behind Globe */
+.glow-effect {
+  position: absolute;
+  width: 75%;
+  height: 75%;
+  background: radial-gradient(circle, rgba(255, 215, 0, 0.2) 0%, rgba(212, 175, 55, 0.05) 50%, transparent 70%);
+  border-radius: 50%;
+  z-index: 1;
+  animation: glow-pulse 4s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+/* Orbiting trade data particles */
+.orbiting-particles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.particle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: var(--premium-gold);
+  border-radius: 50%;
+  box-shadow: 0 0 12px var(--premium-gold), 0 0 20px rgba(255, 215, 0, 0.6);
+}
+
+.particle.p1 {
+  top: 20%;
+  left: 20%;
+  animation: orbit-path-1 10s linear infinite;
+}
+
+.particle.p2 {
+  bottom: 20%;
+  right: 20%;
+  animation: orbit-path-2 12s linear infinite;
+}
+
+.particle.p3 {
+  top: 50%;
+  left: 80%;
+  animation: orbit-path-3 15s linear infinite;
 }
 
 /* Trade dashboard card */
@@ -252,12 +353,87 @@
   max-width: 500px;
   color: var(--dark-navy);
   transition: all 0.3s ease;
+  z-index: 2;
 }
 
-/* Floating animation */
+/* Animations & Keyframes */
+@keyframes premium-float {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(1.5deg);
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+@keyframes exportGlobeRotate360 {
+  from {
+    transform: scale(1.2) rotateY(0deg);
+  }
+  to {
+    transform: scale(1.2) rotateY(360deg);
+  }
+}
+
+@keyframes glow-pulse {
+  0% {
+    transform: scale(1.2);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(1.4);
+    opacity: 1;
+  }
+}
+
+@keyframes orbit-path-1 {
+  0% { transform: rotate(0deg) translate(215px) rotate(0deg); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: rotate(360deg) translate(215px) rotate(-360deg); opacity: 0; }
+}
+
+@keyframes orbit-path-2 {
+  0% { transform: rotate(360deg) translate(245px) rotate(-360deg); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: rotate(0deg) translate(245px) rotate(0deg); opacity: 0; }
+}
+
+@keyframes orbit-path-3 {
+  0% { transform: scale(0.5) translate(-140px, -70px); opacity: 0; }
+  50% { transform: scale(1) translate(140px, 70px); opacity: 1; }
+  100% { transform: scale(0.5) translate(-140px, -70px); opacity: 0; }
+}
+
 @keyframes float {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-10px); }
+}
+
+/* Responsive adjustment for Trade grid */
+@media (max-width: 991px) {
+  .trade-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    justify-items: center;
+  }
+  .trade-animation-container {
+    max-width: 450px;
+  }
+}
+
+@media (max-width: 576px) {
+  .trade-animation-container {
+    max-width: 320px;
+  }
+  .particle {
+    width: 6px;
+    height: 6px;
+  }
 }
 
 /* Fade-in animation */
@@ -1690,4 +1866,3 @@
     padding: 20px 15px !important;
   }
 }
-
