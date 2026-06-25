@@ -227,10 +227,24 @@ return (
   </div>
 </section>
 <section id="portfolio-dashboard">
-  <div 
-    id="animate-dashboard"
-    className={`financial-dashboard ${isVisible['animate-dashboard'] ? 'animate-fade-up' : ''}`}
-  >
+  <div className="container portfolio-layout-wrapper">
+    {/* LEFT SIDE - VIDEO */}
+    <div className="portfolio-left-video">
+      <div className="video-container">
+        <video
+          src="/videos/Finance animation.webm"
+          autoPlay
+          muted
+          loop
+          playsInline
+        />
+      </div>
+    </div>
+
+    <div 
+      id="animate-dashboard"
+      className={`financial-dashboard ${isVisible['animate-dashboard'] ? 'animate-fade-up' : ''}`}
+    >
 
     <div className="dashboard-header">
       <h3 className="dashboard-title">Portfolio Performance</h3>
@@ -279,6 +293,7 @@ return (
 
     </div>
 
+  </div>
   </div>
 </section>
       {/* Financial Calculator Section */}

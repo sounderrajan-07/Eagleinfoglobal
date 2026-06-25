@@ -348,7 +348,21 @@ function BankLoan() {
     isVisible['animate-hero-visual'] ? 'animate-fade-right' : ''
   }`}
 >
-  <div className="loan-calculator-widget">
+  <div className="container calculator-layout-wrapper">
+    {/* LEFT SIDE - VIDEO */}
+    <div className="calculator-left-video">
+      <div className="video-container">
+        <video
+          src="/videos/Bankloan animation.webm"
+          autoPlay
+          muted
+          loop
+          playsInline
+        />
+      </div>
+    </div>
+
+    <div className="loan-calculator-widget">
 
     <div className="calculator-header">
       <div className="calculator-title-wrapper">
@@ -469,6 +483,7 @@ function BankLoan() {
       </div>
 
     </div>
+  </div>
   </div>
 </section>
 {/* Success Metrics */}
