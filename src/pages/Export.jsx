@@ -258,7 +258,7 @@ function Export() {
           <div className="hero-content-grid">
             <div 
               id="animate-hero-content"
-              className={`hero-content ${isVisible['animate-hero-content'] ? 'animate-fade-left' : ''}`}
+              className={`hero-content ${isVisible['animate-hero-content'] ? 'animate-fade-up' : ''}`}
             >
               <div className="flip-container">
                 <h1 className="export-hero-title">Global Import & Export Services</h1>

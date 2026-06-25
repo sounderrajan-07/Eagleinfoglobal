@@ -6,6 +6,7 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
+  width: 100%;
 }
 
 /* Hero Section */
@@ -44,6 +45,7 @@ display: flex;             /* Changed from grid to flex for easier centering */
   padding: 0 20px;
   position: relative;
   z-index: 2;
+  margin: 0 auto;
 }
 
 .hero-content {

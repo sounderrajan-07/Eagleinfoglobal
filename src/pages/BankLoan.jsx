@@ -283,7 +283,7 @@ function BankLoan() {
       <div
         id="animate-hero-content"
         className={`hero-content ${
-          isVisible['animate-hero-content'] ? 'animate-fade-left' : ''
+          isVisible['animate-hero-content'] ? 'animate-fade-up' : ''
         }`}
       >
         <div className="flip-container">
