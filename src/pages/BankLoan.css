@@ -190,22 +190,23 @@ display: flex;             /* Changed from grid to flex for easier centering */
   background: var(--white); /* White background so video blends in */
 }
 .loan-calculator-widget {
-  background: var(--white); /* Solid white card */
-  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(18px);
+  border-radius: 22px;
   padding: 30px;
   width: 100%;
   max-width: 900px; /* wider for horizontal layout */
   color: var(--dark-navy);
   margin: 0 auto;
-  border: 1px solid rgba(0, 0, 0, 0.05); /* Soft border for visual separation */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* Soft shadow */
+  border: none;
+  box-shadow: none;
   transition: all 0.3s ease;
 }
 .loan-calculator-widget:hover {
   transform: translateY(-6px);
   box-shadow: 
-    0 20px 40px rgba(0, 0, 0, 0.08),
-    0 0 30px rgba(145, 103, 55, 0.12); /* Warm gold glow */
+    0 40px 90px rgba(0, 0, 0, 0.3),
+    0 0 60px rgba(145, 103, 55, 0.18); /* Consultancy-like gold glow */
 }
 
 /* Header */
