@@ -41,6 +41,11 @@ display: flex;
 
 .hero-content {
   opacity: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
 }
 
 .land-hero-title {
@@ -94,6 +99,9 @@ display: flex;
   color: rgba(255, 255, 255, 0.9);
   line-height: 1.6;
   margin-bottom: 40px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 .land-hero p{
   text-align: center;

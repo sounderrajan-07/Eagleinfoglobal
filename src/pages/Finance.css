@@ -43,6 +43,11 @@ position: absolute;
 
 .hero-content {
   opacity: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
 }
 
 .finance-hero-title {
@@ -96,7 +101,9 @@ position: absolute;
   color: rgba(255, 255, 255, 0.9);
   line-height: 1.6;
   margin-bottom: 40px;
-  
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .hero-stats {
@@ -140,6 +147,7 @@ position: absolute;
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .hero-visual {

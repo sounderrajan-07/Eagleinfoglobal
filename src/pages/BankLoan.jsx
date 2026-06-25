@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import './BankLoan.css';
 import { useNavigate } from 'react-router-dom';
 
@@ -6,6 +6,15 @@ function BankLoan() {
   const [isVisible, setIsVisible] = useState({});
   const [selectedLoanType, setSelectedLoanType] = useState(0);
   const navigate = useNavigate();
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.play().catch(err => {
+        console.warn("Mount video play failed:", err);
+      });
+    }
+  }, []);
 
   const [loanCalculator, setLoanCalculator] = useState({
     amount: 100000,
@@ -353,11 +362,21 @@ function BankLoan() {
     <div className="calculator-left-video">
       <div className="video-container">
         <video
-          src="/videos/Bankloan animation.webm"
+          ref={videoRef}
+          src="/videos/Bankloan_animation.webm"
           autoPlay
           muted
           loop
           playsInline
+          onLoadedMetadata={() => {
+            if (videoRef.current) {
+              videoRef.current.play().catch(err => console.warn("Video play failed:", err));
+            }
+          }}
+          onEnded={(e) => {
+            e.target.currentTime = 0;
+            e.target.play().catch(() => {});
+          }}
         />
       </div>
     </div>
