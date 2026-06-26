@@ -28,44 +28,53 @@
 }
 
 /* -------------------------------------------
-   UPDATED: Floating Low-Poly Mesh Overlay 
-   (Infinite Left-to-Right Pan)
+   UPDATED: Sweeping Low-Poly Glass Wave
+   (Sweeps left-to-right every 2 seconds)
 ------------------------------------------- */
 .low-poly-mesh-overlay {
   position: absolute;
-  inset: 0;
-  z-index: 2; 
-  pointer-events: none; 
-  
-  /* Same beautiful SVG pattern */
+  top: 0;
+  height: 100%;
+  /* Controls the thickness of the moving wave band */
+  width: 45%; 
+  z-index: 2;
+  pointer-events: none;
+
+  /* The same interlocking SVG triangle pattern */
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cpolygon points='0,0 60,0 30,60' fill='rgba(255,255,255,0.15)'/%3E%3Cpolygon points='60,0 120,0 90,60' fill='rgba(255,255,255,0.05)'/%3E%3Cpolygon points='60,0 90,60 30,60' fill='rgba(255,255,255,0.25)'/%3E%3Cpolygon points='0,0 30,60 0,120' fill='rgba(255,255,255,0.02)'/%3E%3Cpolygon points='120,0 120,120 90,60' fill='rgba(255,255,255,0.1)'/%3E%3Cpolygon points='0,120 60,120 30,60' fill='rgba(255,255,255,0.2)'/%3E%3Cpolygon points='60,120 120,120 90,60' fill='rgba(255,255,255,0.08)'/%3E%3Cpolygon points='60,120 90,60 30,60' fill='rgba(255,255,255,0.12)'/%3E%3C/svg%3E");
-  
   background-size: 150px 150px;
   background-repeat: repeat;
-  
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
+
+  /* A very faint white light color to make the wave "catch" the illumination */
+  background-color: rgba(255, 255, 255, 0.02);
+
+  /* The glass morphic frost effect that sweeps over the background */
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
 
   /* 
-     NEW: Added infinite linear animation. 
-     Adjust '40s' higher for a slower/gentler float, or lower to speed it up.
+     Fades the left and right edges of the wave band 
+     so it doesn't look like a harsh moving box 
   */
-  animation: glassFloatRight 40s linear infinite;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 30%, black 70%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 30%, black 70%, transparent 100%);
+
+  /* 2-second infinite hardware-accelerated loop */
+  animation: meshWaveSweep 2s infinite linear;
 }
 
 /* 
-   Keyframe to translate background position-x.
-   Using 150px ensures a mathematically seamless loop with background-size.
+   Keyframe animation to translate the wave across the viewport 
+   Includes a skewX to give the wave a premium, dynamic diagonal angle
 */
-@keyframes glassFloatRight {
-  from {
-    background-position-x: 0;
+@keyframes meshWaveSweep {
+  0% {
+    transform: translate3d(-120%, 0, 0) skewX(-20deg);
   }
-  to {
-    background-position-x: 150px;
+  100% {
+    transform: translate3d(250%, 0, 0) skewX(-20deg);
   }
 }
-
 /* Ensure text stays on top */
 .container {
   position: relative;
