@@ -104,7 +104,7 @@ function Consultancy() {
       image: "/images/Consultancy/coat.jpg"
     },
     {
-      name: "Selvam",
+      name: "Siva kumar",
       role: "Legal Advisor",
       expertise: "Madras High Court",
       experience: "18+ years",
