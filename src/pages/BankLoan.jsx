@@ -296,7 +296,7 @@ function BankLoan() {
 
         <p className="hero-subtitle">
           Secure the funding your business needs with our comprehensive loan
-          services. From traditional bank loans to specialized financing, we
+          services.<br /> From traditional bank loans to specialized financing, we
           help you find the perfect solution.
         </p>
 
