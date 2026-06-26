@@ -8,108 +8,34 @@
   padding: 0 20px;
 }
 
-/* Existing Hero Section Styles */
-.about-hero {
-  min-height: 70vh; 
-  position: relative;
-  display: flex;
-  align-items: center;      
-  justify-content: center;  
-  /* Matches the dark navy background in your image */
-  background-color: #06091a; 
-  color: var(--white);
-  overflow: hidden;
-  text-align: center; 
-}
+{/* Hero Section */}
+      <section className="about-hero">
+        <div className="about-hero-background">
+          
+          {/* NEW: Full-screen faceted low-poly mesh */}
+          <div className="low-poly-mesh-overlay"></div>
 
-.about-hero-background {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-}
+          <div className="floating-shapes">
+            <div className="eagle-image">
+              <img src="/images/eagle.png" alt="Eagle" />
+            </div>
+          </div>
+        </div>
 
-/* -------------------------------------------
-   UPDATED: Translucent Geometric Planes
-------------------------------------------- */
-.geometric-overlay {
-  position: absolute;
-  inset: 0;
-  z-index: 2; 
-  overflow: hidden;
-  pointer-events: none; /* Let clicks pass through to content */
-}
-
-/* Base styles for all planes */
-.glass-plane {
-  position: absolute;
-  /* Very subtle blur to smooth the overlaps, but not enough to look "frosted" */
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
-  /* Slow, subtle floating animation so it doesn't feel static */
-  animation: floatPlane 15s infinite alternate ease-in-out;
-}
-
-/* 1. Center-Left Upward Triangle */
-.plane-left {
-  width: 550px; 
-  height: 600px;
-  top: 15%; 
-  left: 20%;
-  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-  /* Fades from top to bottom */
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.02) 70%, transparent 100%);
-  transform: rotate(-10deg);
-}
-
-/* 2. Top-Right Downward Triangle */
-.plane-right-top {
-  width: 600px; 
-  height: 500px;
-  top: -10%; 
-  right: 15%;
-  clip-path: polygon(0 0, 100% 0, 50% 100%);
-  /* Fades from top to bottom */
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.01) 80%, transparent 100%);
-  animation-delay: -5s;
-}
-
-/* 3. Smaller Intersecting Triangle on the Right */
-.plane-right-bottom {
-  width: 400px; 
-  height: 450px;
-  top: 35%; 
-  right: 22%;
-  clip-path: polygon(0 30%, 100% 0, 60% 100%);
-  /* Fades diagonally */
-  background: linear-gradient(220deg, rgba(255, 255, 255, 0.1) 0%, transparent 80%);
-  animation-delay: -2s;
-}
-
-/* 4. Large Base Triangle fading up from the bottom left */
-.plane-bottom-left {
-  width: 800px; 
-  height: 600px;
-  bottom: -20%; 
-  left: 5%;
-  clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
-  /* Fades from bottom up */
-  background: linear-gradient(0deg, rgba(255, 255, 255, 0.09) 0%, transparent 70%);
-  animation-delay: -8s;
-}
-
-/* Gentle floating animation */
-@keyframes floatPlane {
-  0% { transform: translateY(0px) rotate(0deg); }
-  50% { transform: translateY(-10px) rotate(1deg); }
-  100% { transform: translateY(10px) rotate(-1deg); }
-}
-
-/* Ensure text stays on top */
-.container {
-  position: relative;
-  z-index: 10;
-}
-
+        <div className="container">
+          <div 
+            id="animate-hero"
+            className={`about-hero-content ${isVisible['animate-hero'] ? 'animate-fade-up' : ''}`}
+          >
+          <div className="flip-container">
+            <h1 className="about-hero-title">About Eagle Info Global</h1>
+          </div>
+            <p className="about-hero-subtitle">
+              Pioneering business excellence through innovative solutions and global expertise
+            </p>
+          </div>
+        </div>
+      </section>
 .floating-shapes {
   position: absolute;
   width: 100%;
