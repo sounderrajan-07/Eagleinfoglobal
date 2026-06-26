@@ -8,34 +8,51 @@
   padding: 0 20px;
 }
 
-{/* Hero Section */}
-      <section className="about-hero">
-        <div className="about-hero-background">
-          
-          {/* NEW: Full-screen faceted low-poly mesh */}
-          <div className="low-poly-mesh-overlay"></div>
+/* Existing Hero Section Styles */
+.about-hero {
+  min-height: 70vh; 
+  position: relative;
+  display: flex;
+  align-items: center;      
+  justify-content: center;  
+  background: linear-gradient(135deg, var(--premium-dark-blue) 0%, var(--dark-navy) 100%);
+  color: var(--white);
+  overflow: hidden;
+  text-align: center; 
+}
 
-          <div className="floating-shapes">
-            <div className="eagle-image">
-              <img src="/images/eagle.png" alt="Eagle" />
-            </div>
-          </div>
-        </div>
+.about-hero-background {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
 
-        <div className="container">
-          <div 
-            id="animate-hero"
-            className={`about-hero-content ${isVisible['animate-hero'] ? 'animate-fade-up' : ''}`}
-          >
-          <div className="flip-container">
-            <h1 className="about-hero-title">About Eagle Info Global</h1>
-          </div>
-            <p className="about-hero-subtitle">
-              Pioneering business excellence through innovative solutions and global expertise
-            </p>
-          </div>
-        </div>
-      </section>
+/* -------------------------------------------
+   NEW: Full-Screen Low-Poly Mesh Overlay
+------------------------------------------- */
+.low-poly-mesh-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none; /* Let clicks pass through to content */
+  
+  /* The seamlessly tiling SVG triangle pattern */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cpolygon points='0,0 60,0 30,60' fill='rgba(255,255,255,0.15)'/%3E%3Cpolygon points='60,0 120,0 90,60' fill='rgba(255,255,255,0.05)'/%3E%3Cpolygon points='60,0 90,60 30,60' fill='rgba(255,255,255,0.25)'/%3E%3Cpolygon points='0,0 30,60 0,120' fill='rgba(255,255,255,0.02)'/%3E%3Cpolygon points='120,0 120,120 90,60' fill='rgba(255,255,255,0.1)'/%3E%3Cpolygon points='0,120 60,120 30,60' fill='rgba(255,255,255,0.2)'/%3E%3Cpolygon points='60,120 120,120 90,60' fill='rgba(255,255,255,0.08)'/%3E%3Cpolygon points='60,120 90,60 30,60' fill='rgba(255,255,255,0.12)'/%3E%3C/svg%3E");
+  
+  /* Adjust this size to make the triangles larger or smaller */
+  background-size: 150px 150px; 
+  background-repeat: repeat;
+  
+  /* Blurs the background image (like the eagle) behind the triangles */
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+/* Ensure text stays on top */
+.container {
+  position: relative;
+  z-index: 10;
+}
 .floating-shapes {
   position: absolute;
   width: 100%;
