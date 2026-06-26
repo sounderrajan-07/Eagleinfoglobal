@@ -268,9 +268,13 @@ function BankLoan() {
   const loan = calculateLoan();
  return (
     <div className="bank-loan">
-      {/* Hero Section */}
+    {/* Hero Section */}
 <section className="loan-hero">
-  <div className="about-hero-background">
+  <div className="loan-hero-background">
+    
+    {/* Clean Geometric Wave Overlay Mask */}
+    <div className="low-poly-mesh-overlay"></div>
+
     <div className="floating-shapes">
       <div className="eagle-image">
         <img src="/images/eagle.png" alt="Eagle" />
