@@ -21,15 +21,63 @@
   overflow: hidden;
 }
 
+/* Normalized Background Layer Wrapper */
 .contact-hero-background {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0; /* Shorthand for top:0, left:0, width:100%, height:100% */
   z-index: 1;
 }
 
+/* -------------------------------------------
+   Smooth Geometric Wave Sweep
+   (Image stays crisp, wave shape sweeps every 2s)
+------------------------------------------- */
+.low-poly-mesh-overlay {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+  pointer-events: none;
+
+  /* The low-poly mesh pattern remains completely clean and normal */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cpolygon points='0,0 60,0 30,60' fill='rgba(255,255,255,0.15)'/%3E%3Cpolygon points='60,0 120,0 90,60' fill='rgba(255,255,255,0.05)'/%3E%3Cpolygon points='60,0 90,60 30,60' fill='rgba(255,255,255,0.25)'/%3E%3Cpolygon points='0,0 30,60 0,120' fill='rgba(255,255,255,0.02)'/%3E%3Cpolygon points='120,0 120,120 90,60' fill='rgba(255,255,255,0.1)'/%3E%3Cpolygon points='0,120 60,120 30,60' fill='rgba(255,255,255,0.2)'/%3E%3Cpolygon points='60,120 120,120 90,60' fill='rgba(255,255,255,0.08)'/%3E%3Cpolygon points='60,120 90,60 30,60' fill='rgba(255,255,255,0.12)'/%3E%3C/svg%3E");
+  background-size: 150px 150px;
+  background-repeat: repeat;
+
+  /* Premium glass glow configurations */
+  background-color: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+
+  /* Linear gradient mask creates a smooth, beautiful vertical sweep */
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 15%, black 35%, transparent 50%);
+  mask-image: linear-gradient(to right, transparent 0%, black 15%, black 35%, transparent 50%);
+  mask-size: 200% 100%;
+
+  /* Seamless hardware-accelerated 2s loop */
+  animation: smoothClippedWave 2s infinite linear;
+}
+
+/* Moves the mask horizontally via hardware acceleration for locked 60fps performance */
+@keyframes smoothClippedWave {
+  0% {
+    mask-position: 150% 0%;
+    -webkit-mask-position: 150% 0%;
+    transform: translate3d(-10%, 0, 0);
+  }
+  100% {
+    mask-position: -50% 0%;
+    -webkit-mask-position: -50% 0%;
+    transform: translate3d(10%, 0, 0);
+  }
+}
+
+/* Foreground content container */
+.contact-hero .container {
+  position: relative;
+  z-index: 10;
+}
 .floating-elements {
   position: absolute;
   width: 100%;
@@ -308,33 +356,39 @@ font-family: 'Times New Roman', Times, serif !important;
   min-height: 120px;
   line-height: 1.6;
 }
-
 .form-submit-btn {
   width: 100%;
-  background: url('../images/btn1.jpg');
+  /* Force the image to fill the entire button area perfectly */
+  background-image: url('../images/btn.jpg');
+  background-size: 100% 100%; 
+  background-repeat: no-repeat;
+  background-position: center;
+  
   color: var(--dark-navy);
   border: none;
   padding: 18px 30px;
-  border-radius: 10px;
+  border-radius: 10px; /* This ensures the rectangle has rounded corners */
   font-weight: 700;
   font-size: 1.1rem;
   cursor: pointer;
-  transition: all 0.3s ease;
-  transform: translateY(0);
+  transition: all 0.4s ease;
   margin-top: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
 .form-submit-btn:hover:not(.disabled) {
   transform: translateY(-3px) rotateX(5deg);
-  box-shadow: 0 10px 25px rgba(255, 215, 0, 0.3);
+  box-shadow: 0 10px 20px rgba(212, 175, 55, 0.5);
+  filter: brightness(1.1); /* Adds a slight sheen effect on hover */
 }
 
 .form-submit-btn.disabled {
   opacity: 0.6;
   cursor: not-allowed;
-  background: #ccc;
+  background: #a0a0a0; /* Fallback for disabled state */
+  color: #f0f0f0;
+  box-shadow: none;
 }
-
 .loading-spinner {
   display: flex;
   align-items: center;

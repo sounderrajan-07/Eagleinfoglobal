@@ -9,24 +9,50 @@
   padding: 0 20px;
   width: 100%;
 }
-
-/* Hero Section */
+/* Hero Section Base */
 .consultancy-hero {
-  min-height: 70vh; /* Changed from 140vh to fit the screen */
+  min-height: 70vh; 
   position: relative;
   display: flex;
-  align-items: center;      /* Vertically centers the content */
-  justify-content: center;   /* Horizontally centers the content */
+  align-items: center;      
+  justify-content: center;   
   background: linear-gradient(135deg, var(--premium-dark-blue) 0%, var(--dark-navy) 100%);
   color: var(--white);
   overflow: hidden;
-  text-align: center;        /* Ensures text lines align to the center */
+  text-align: center;        
 }
 
-.hero-background {
+/* Background Wrapper */
+.consultancy-hero-background {
   position: absolute;
-  inset: 0; /* Shorthand for top/left/width/height */
-  z-index: 2;
+  inset: 0; 
+  z-index: 1; /* Drop z-index to 1 so the text container stays on top */
+}
+
+/* -------------------------------------------
+   Faceted Low-Poly Mesh Overlay
+------------------------------------------- */
+.low-poly-mesh-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2; /* Sits above the gradient background layer */
+  pointer-events: none; /* Allows user interactions/clicks to pass straight through */
+  
+  /* Repeating mathematical SVG triangle configurations */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cpolygon points='0,0 60,0 30,60' fill='rgba(255,255,255,0.15)'/%3E%3Cpolygon points='60,0 120,0 90,60' fill='rgba(255,255,255,0.05)'/%3E%3Cpolygon points='60,0 90,60 30,60' fill='rgba(255,255,255,0.25)'/%3E%3Cpolygon points='0,0 30,60 0,120' fill='rgba(255,255,255,0.02)'/%3E%3Cpolygon points='120,0 120,120 90,60' fill='rgba(255,255,255,0.1)'/%3E%3Cpolygon points='0,120 60,120 30,60' fill='rgba(255,255,255,0.2)'/%3E%3Cpolygon points='60,120 120,120 90,60' fill='rgba(255,255,255,0.08)'/%3E%3Cpolygon points='60,120 90,60 30,60' fill='rgba(255,255,255,0.12)'/%3E%3C/svg%3E");
+  
+  background-size: 150px 150px; 
+  background-repeat: repeat;
+  
+  /* Creates the glass definition and background blurring */
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+/* Foreground Content Container */
+.container {
+  position: relative;
+  z-index: 10; /* Keeps all text, links, and CTA buttons crisp and clickable */
 }
 
 /* 2. Update the Grid to a Single Column */
@@ -999,4 +1025,3 @@ html, body {
     height: 35px;
   }
 }
-

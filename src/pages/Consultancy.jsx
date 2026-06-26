@@ -10,7 +10,7 @@ function Consultancy() {
   const consultancyServices = [
     {
       title: "Consultancy Global Carees",
-      icon: "/images/Consultancy/career.jpg",
+      icon: "/images/Consultancy/world.png",
       description: "We connect global talent with international opportunities through expert guidance, seamless placements, and complete career support.",
       features: ["Global Placements", "Expert Guidance", "Personalized Matching", "Hiring Network"],
       benefits: ["Career Growth", "Salary Boost", "Work Permit", "Global Exposure"],
@@ -104,7 +104,7 @@ function Consultancy() {
       image: "/images/Consultancy/coat.jpg"
     },
     {
-      name: "Selvam",
+      name: "Siva kumar",
       role: "Legal Advisor",
       expertise: "Madras High Court",
       experience: "18+ years",
@@ -137,15 +137,20 @@ function Consultancy() {
   return (
     <div className="consultancy">
 
-      {/* Hero */}
-      <section className="consultancy-hero">
-        <div className="about-hero-background">
+     {/* Hero */}
+     <section className="consultancy-hero">
+        <div className="consultancy-hero-background">
+          
+          {/* Exact low-poly mesh overlay from image_bb97be.png */}
+          <div className="low-poly-mesh-overlay"></div>
+
           <div className="floating-shapes">
             <div className="eagle-image">
               <img src="/images/eagle.png" alt="Eagle" />
             </div>
           </div>
         </div>
+        
         <div className="container">
           <div className="hero-content-grid">
             <div
@@ -163,7 +168,6 @@ function Consultancy() {
           </div>
         </div>
       </section>
-
       {/* Business Analytics Section */}
       <section className="business-analytics-section">
         <div className="container">

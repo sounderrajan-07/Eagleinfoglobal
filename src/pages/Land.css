@@ -12,7 +12,7 @@
 
 /* Hero Section */
 .land-hero {
-min-height: 70vh;
+  min-height: 70vh;
   height: auto; /* Allows content to expand on small screens */
   padding: 80px 0;
   position: relative;
@@ -24,12 +24,38 @@ min-height: 70vh;
   overflow: hidden;
 }
 
-.hero-background {
+/* Aligned class wrapper */
+.land-hero-background {
   position: absolute;
-  inset: 0; /* Shorthand for top/left/width/height */
-  z-index: 2;
+  inset: 0; 
+  z-index: 1; /* Kept at 1 so content stacks elegantly on top */
 }
 
+/* -------------------------------------------
+   Faceted Low-Poly Mesh Overlay (Same Pattern)
+------------------------------------------- */
+.low-poly-mesh-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2; /* Layered nicely between your base background and copy text */
+  pointer-events: none; /* Allows mouse clicks to interact directly with buttons */
+  
+  /* The seamlessly tiling SVG triangle coordinates */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cpolygon points='0,0 60,0 30,60' fill='rgba(255,255,255,0.15)'/%3E%3Cpolygon points='60,0 120,0 90,60' fill='rgba(255,255,255,0.05)'/%3E%3Cpolygon points='60,0 90,60 30,60' fill='rgba(255,255,255,0.25)'/%3E%3Cpolygon points='0,0 30,60 0,120' fill='rgba(255,255,255,0.02)'/%3E%3Cpolygon points='120,0 120,120 90,60' fill='rgba(255,255,255,0.1)'/%3E%3Cpolygon points='0,120 60,120 30,60' fill='rgba(255,255,255,0.2)'/%3E%3Cpolygon points='60,120 120,120 90,60' fill='rgba(255,255,255,0.08)'/%3E%3Cpolygon points='60,120 90,60 30,60' fill='rgba(255,255,255,0.12)'/%3E%3C/svg%3E");
+  
+  background-size: 150px 150px;
+  background-repeat: repeat;
+  
+  /* Retains the frosted/glass definition style */
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+/* Foreground Content Wrapper */
+.land-hero .container {
+  position: relative;
+  z-index: 10; /* Keeps text links, features list, and CTA buttons sharp and responsive */
+}
 .hero-content-grid {
 display: flex;
   flex-direction: column;

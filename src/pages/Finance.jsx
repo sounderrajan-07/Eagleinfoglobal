@@ -123,7 +123,7 @@ function Finance() {
       image: "/images/Finance/coat.jpg"
     },
     {
-      name: "Selvam",
+      name: "Siva kumar",
       role: "Legal Advisor",
       expertise: "Madras High Court",
       experience: "18+ years",
@@ -187,9 +187,13 @@ function Finance() {
 
 return (
     <div className="finance">
-      {/* Hero Section */}
+{/* Hero Section */}
 <section className="finance-hero">
-  <div className="about-hero-background">
+  <div className="finance-hero-background">
+    
+    {/* Exact full-screen low-poly mesh overlay from image_bb97be.png */}
+    <div className="low-poly-mesh-overlay"></div>
+
     <div className="floating-shapes">
       <div className="eagle-image">
         <img src="/images/eagle.png" alt="Eagle" />

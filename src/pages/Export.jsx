@@ -203,7 +203,7 @@ function Export() {
       image: "/images/export/coat.jpg"
     },
     {
-      name: "Rajesh Kumar",
+      name: "Rajeshwaran",
       role: "Senior I&E Manager",
       expertise: "High Net Worth Financial Planning",
       experience: "15+ years",
@@ -212,7 +212,7 @@ function Export() {
       image: "/images/export/coat.jpg"
     },
     {
-      name: "Selvam",
+      name: "Siva kumar",
       role: "Legal Advisor",
       expertise: "Madras High Court",
       experience: "18+ years",
@@ -245,9 +245,13 @@ function Export() {
 
   return (
     <div className="export">
-      {/* Hero Section */}
+     {/* Hero Section */}
       <section className="export-hero">
-        <div className="about-hero-background">
+        <div className="export-hero-background">
+          
+          {/* Exact full-screen low-poly mesh overlay from image_bb97be.png */}
+          <div className="low-poly-mesh-overlay"></div>
+
           <div className="floating-shapes">
             <div className="eagle-image">
               <img src="../images/eagle.png" alt="Eagle" />
@@ -264,7 +268,7 @@ function Export() {
                 <h1 className="export-hero-title">Global Import & Export Services</h1>
               </div>
               <p className="hero-subtitle">
-                Expand your business globally with our comprehensive export services. From market entry to logistics, we handle every aspect of international trade.
+                Expand your business globally with our comprehensive export services. <br />From market entry to logistics, we handle every aspect of international trade.
               </p>
               <div className="hero-highlights">
                 <div className="highlight-card">
@@ -303,7 +307,6 @@ function Export() {
           </div>
         </div>
       </section>
-
      <section 
         id="global-trade-monitor"
         className="trade-section"

@@ -227,7 +227,7 @@ function BankLoan() {
       image: "/images/bank-loan/coat.jpg"
     },
     {
-      name: "Selvam",
+      name: "Siva kumar",
       role: "Legal Advisor",
       expertise: "Madras High Court",
       experience: "18+ years",
@@ -268,9 +268,13 @@ function BankLoan() {
   const loan = calculateLoan();
  return (
     <div className="bank-loan">
-      {/* Hero Section */}
+    {/* Hero Section */}
 <section className="loan-hero">
-  <div className="about-hero-background">
+  <div className="loan-hero-background">
+    
+    {/* Clean Geometric Wave Overlay Mask */}
+    <div className="low-poly-mesh-overlay"></div>
+
     <div className="floating-shapes">
       <div className="eagle-image">
         <img src="/images/eagle.png" alt="Eagle" />
@@ -292,7 +296,7 @@ function BankLoan() {
 
         <p className="hero-subtitle">
           Secure the funding your business needs with our comprehensive loan
-          services. From traditional bank loans to specialized financing, we
+          services.<br /> From traditional bank loans to specialized financing, we
           help you find the perfect solution.
         </p>
 

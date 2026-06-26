@@ -12,8 +12,7 @@
 
 /* Hero Section */
 .finance-hero {
-  
-  min-height: 70vh; /* Changed from 140vh to fit the screen */
+  min-height: 70vh; 
   position: relative;
   display: flex;
   align-items: center;      /* Vertically centers the content */
@@ -24,12 +23,38 @@
   text-align: center;        /* Ensures text lines align to the center */
 }
 
-.hero-background {
-position: absolute;
-  inset: 0; /* Shorthand for top/left/width/height */
-  z-index: 2;
+/* Consolidated Background Wrapper */
+.finance-hero-background {
+  position: absolute;
+  inset: 0; 
+  z-index: 1; /* Set to 1 so the foreground stays layered correctly above it */
 }
 
+/* -------------------------------------------
+   Faceted Low-Poly Mesh Overlay (Same Pattern)
+------------------------------------------- */
+.low-poly-mesh-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2; /* Sits directly above the blue gradient background layer */
+  pointer-events: none; /* Allows user mouse clicks to pass straight through to layout elements */
+  
+  /* Seamlessly tiling geometric SVG pattern coordinates */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cpolygon points='0,0 60,0 30,60' fill='rgba(255,255,255,0.15)'/%3E%3Cpolygon points='60,0 120,0 90,60' fill='rgba(255,255,255,0.05)'/%3E%3Cpolygon points='60,0 90,60 30,60' fill='rgba(255,255,255,0.25)'/%3E%3Cpolygon points='0,0 30,60 0,120' fill='rgba(255,255,255,0.02)'/%3E%3Cpolygon points='120,0 120,120 90,60' fill='rgba(255,255,255,0.1)'/%3E%3Cpolygon points='0,120 60,120 30,60' fill='rgba(255,255,255,0.2)'/%3E%3Cpolygon points='60,120 120,120 90,60' fill='rgba(255,255,255,0.08)'/%3E%3Cpolygon points='60,120 90,60 30,60' fill='rgba(255,255,255,0.12)'/%3E%3C/svg%3E");
+  
+  background-size: 150px 150px;
+  background-repeat: repeat;
+  
+  /* Handles the glass definition/blur properties */
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+/* Foreground Content Wrapper */
+.finance-hero .container {
+  position: relative;
+  z-index: 10; /* Keeps stats blocks, copy text, and your CTA buttons clear and interactive */
+}
 .hero-content-grid {
  display: flex;             /* Changed from grid to flex for easier centering */
   flex-direction: column;
@@ -1244,4 +1269,4 @@ img {
   #portfolio-dashboard .video-container {
     height: 250px;
   }
-}
+}

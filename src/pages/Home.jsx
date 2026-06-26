@@ -101,9 +101,8 @@ function Home() {
               <div
                 key={index}
                 id={`animate-stat-${index}`}
-                className={`stat-card ${
-                  isVisible[`animate-stat-${index}`] ? 'animate-fade-up' : ''
-                }`}
+                className={`stat-card ${isVisible[`animate-stat-${index}`] ? 'animate-fade-up' : ''
+                  }`}
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="stat-icon">
@@ -122,12 +121,11 @@ function Home() {
         <div className="container">
           <div
             id="animate-bulb-section"
-            className={`bulb-container ${
-              isVisible['animate-bulb-section'] ? 'animate-fade-up' : ''
-            }`}
+            className={`bulb-container ${isVisible['animate-bulb-section'] ? 'animate-fade-up' : ''
+              }`}
           >
             <div className="bulb-image-wrapper">
-              <img src="/images/about/bulb-transparent.png" alt="Innovation and Ideas" className="bulb-image" />
+              <img src="/images/about/bulb-transparent2.png" alt="Innovation and Ideas" className="bulb-image" />
             </div>
             <div className="bulb-text-wrapper">
               <h2 className="bulb-title">Lighting the Path to Success</h2>
@@ -144,9 +142,8 @@ function Home() {
         <div className="container">
           <div
             id="animate-services-header"
-            className={`section-header ${
-              isVisible['animate-services-header'] ? 'animate-fade-up' : ''
-            }`}
+            className={`section-header ${isVisible['animate-services-header'] ? 'animate-fade-up' : ''
+              }`}
           >
             <h2 className="section-title">Our Premium Services</h2>
             <p className="section-description">
@@ -159,9 +156,8 @@ function Home() {
               <div
                 key={index}
                 id={`animate-service-${index}`}
-                className={`service-card ${
-                  isVisible[`animate-service-${index}`] ? 'animate-fade-up' : ''
-                }`}
+                className={`service-card ${isVisible[`animate-service-${index}`] ? 'animate-fade-up' : ''
+                  }`}
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="service1-icon">{service.icon}</div>
@@ -190,9 +186,8 @@ function Home() {
         <div className="container">
           <div
             id="animate-cta"
-            className={`cta-content ${
-              isVisible['animate-cta'] ? 'animate-fade-up' : ''
-            }`}
+            className={`cta-content ${isVisible['animate-cta'] ? 'animate-fade-up' : ''
+              }`}
           >
             <h2 className="cta-title">Ready to Transform Your Business?</h2>
             <p className="cta-description">
@@ -200,21 +195,21 @@ function Home() {
             </p>
 
             <div className="cta-buttons">
-      <button
-        className="btn1-primary"
-        onClick={() => navigate('/contact#contact-form')}
-      >
-        Get Started Today
+              <button
+                className="btn1-primary"
+                onClick={() => navigate('/contact#contact-form')}
+              >
+                Get Started Today
 
-      </button>
+              </button>
 
-      <button
-        className="btn2-secondary"
-        onClick={() => navigate('/contact#contact-form')}
-      >
-        Schedule Consultation
-      </button>
-    </div>
+              <button
+                className="btn2-secondary"
+                onClick={() => navigate('/contact#contact-form')}
+              >
+                Schedule Consultation
+              </button>
+            </div>
 
           </div>
         </div>

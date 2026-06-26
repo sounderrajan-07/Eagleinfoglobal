@@ -1,6 +1,6 @@
 import './Footer.css';
 import logo from "../assets/eaglecard-removebg-preview.png";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 import facebook from "../images/facebook.jpg";
 import instagram from "../images/instagram.jpg";
@@ -40,11 +40,11 @@ function Footer() {
   ];
 
   const services = [
-    { name: 'Consultancy Services', href: "Consultancy" },
-    { name: 'Land Development', href: "Land" },
-    { name: 'Financial Solutions', href: "Finance" },
-    { name: 'Export Services', href: "Export" },
-    { name: 'BankLoans', href: "BankLoan" }
+    { name: 'Consultancy Services', href: "/consultancy" },
+    { name: 'Land Development', href: "/land" },
+    { name: 'Financial Solutions', href: "/finance" },
+    { name: 'Export Services', href: "/export" },
+    { name: 'Bank Loans', href: "/bank-loan" }
   ];
 
   return (
@@ -72,9 +72,9 @@ function Footer() {
             <ul className="footer-list">
               {services.map((service, index) => (
                 <li key={index} className="footer-list-item">
-                  <a href={service.href} className="footer-link">
+                  <Link to={service.href} className="footer-link">
                     {service.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

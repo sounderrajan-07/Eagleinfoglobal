@@ -101,9 +101,13 @@ function AboutUs() {
   return (
     <div className="about-us">
 
-      {/* Hero Section */}
+{/* Hero Section */}
       <section className="about-hero">
         <div className="about-hero-background">
+          
+          {/* NEW: Full-screen faceted low-poly mesh */}
+          <div className="low-poly-mesh-overlay"></div>
+
           <div className="floating-shapes">
             <div className="eagle-image">
               <img src="/images/eagle.png" alt="Eagle" />
@@ -126,6 +130,7 @@ function AboutUs() {
         </div>
       </section>
 
+      
       {/* Company Overview Section */}
       <section className="company-overview">
         <div className="container">

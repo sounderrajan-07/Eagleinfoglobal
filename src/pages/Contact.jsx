@@ -35,14 +35,14 @@ function Contact() {
   // Updated with direct paths
   const contactInfo = [
     {
-      image: "../images/location.jpg",
+      image: "/images/location.jpg",
       title: "Visit Our Office",
       details: ["No.1, Venkatraman Street, First Floor Velachery Main Road, Rajakilpakkam, Chennai-600073."],
       action: "Get Directions",
       href: "https://www.google.com/maps/place/85,+Velachery+-+Tambaram+Main+Rd,+Sabai+Colony,+Selaiyur,+Rajakilpakkam,+Chennai,+Tamil+Nadu+600073"
     },
     {
-      image: "../images/call.jpg",
+      image: "/images/call.jpg",
       title: "Call Us",
       type: "call",
       details: ["+91 98403 34320", "+91 90877 72227", "Available 24/7"],
@@ -51,7 +51,7 @@ function Contact() {
       href: "tel:+919840334320"
     },
     {
-      image: "../images/email.jpg",
+      image: "/images/email.jpg",
       title: "Email Us",
       type: "email",
       details: ["info@eagleinfoglobal.com", "eagleinfoglobal@gmail.com", "Quick Response"],
@@ -60,7 +60,7 @@ function Contact() {
       href: "mailto:info@eagleinfoglobal.com"
     },
     {
-      image: "../images/livechat.jpg",
+      image: "/images/livechat.jpg",
       title: "Live Chat",
       details: ["Instant Support", "Monday - Sunday", "9 AM - 6 PM EST"],
       action: "Start Chat",
@@ -111,7 +111,7 @@ const handleSubmit = async (e) => {
   setSubmitStatus(''); // Reset status
 
   try {
-    const response = await fetch('http://localhost:5000/api/contact', {
+    const response = await fetch('/api/contact', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(formData),
@@ -141,9 +141,13 @@ const handleSubmit = async (e) => {
 
   return (
     <div className="contact">
-      {/* Hero Section */}
+{/* Hero Section */}
       <section className="contact-hero">
-        <div className="about-hero-background">
+        <div className="contact-hero-background">
+          
+          {/* Smooth Geometric Wave Overlay Mask */}
+          <div className="low-poly-mesh-overlay"></div>
+
           <div className="floating-shapes">
             <div className="eagle-image">
               <img src="/images/eagle.png" alt="Eagle" />
@@ -156,7 +160,8 @@ const handleSubmit = async (e) => {
               <h1 className="contact-hero-title">Get In Touch</h1>
             </div>
             <p className="contact-hero-subtitle">
-              Ready to transform your business? Let's start the conversation today.
+              Ready to transform your business?<br />
+              Let's start the conversation today.
             </p>
           </div>
         </div>
@@ -263,10 +268,10 @@ const handleSubmit = async (e) => {
               <div className="visual-content">
                 <div className="floating-form-elements">
                   <div className="form-element element-1">
-                    <img src="../images/verified.jpg" alt="verified" />
+                    <img src="/images/verified.jpg" alt="verified" />
                   </div>
                   <div className="form-element element-2">
-                    <img src="../images/certify.jpg" alt="certified" />
+                    <img src="/images/certify.jpg" alt="certified" />
                   </div>
                 </div>
               </div>
@@ -291,11 +296,11 @@ const handleSubmit = async (e) => {
                 </div>
                 <div className="location-details">
                   <div className="location-item">
-                    <span className="location-icon"><img src="../images/location.jpg" alt="location" /></span>
+                    <span className="location-icon"><img src="/images/location.jpg" alt="location" /></span>
                     <span className="location-text">{location.address}</span>
                   </div>
                   <div className="location-item">
-                    <span className="location-icon"><img src="../images/call.jpg" alt="Phone" /></span>
+                    <span className="location-icon"><img src="/images/call.jpg" alt="Phone" /></span>
                     <span className="location-text">{location.phone}</span>
                   </div>
                 </div>
