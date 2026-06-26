@@ -356,31 +356,51 @@ font-family: 'Times New Roman', Times, serif !important;
   min-height: 120px;
   line-height: 1.6;
 }
-
 .form-submit-btn {
   width: 100%;
-  background: url('../images/btn1.jpg');
+  /* Replaced the cropped image asset with a matching premium metallic bronze gradient */
+  background: linear-gradient(to right, #b3874b 0%, #ddbe85 50%, #966e33 100%);
   color: var(--dark-navy);
   border: none;
   padding: 18px 30px;
-  border-radius: 10px;
+  /* Clean, symmetrical rounded rectangle corners */
+  border-radius: 10px; 
   font-weight: 700;
   font-size: 1.1rem;
   cursor: pointer;
   transition: all 0.3s ease;
   transform: translateY(0);
   margin-top: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
+/* Added a hover states to elevate interaction */
+.form-submit-btn:hover {
+  filter: brightness(1.15);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(179, 135, 75, 0.3);
+}
+
+.form-submit-btn:active {
+  transform: translateY(0);
+}
+
+/* Refined hover state - matching the gold/bronze palette */
 .form-submit-btn:hover:not(.disabled) {
   transform: translateY(-3px) rotateX(5deg);
-  box-shadow: 0 10px 25px rgba(255, 215, 0, 0.3);
+  /* Changed shadow color to a warmer gold/bronze glow */
+  box-shadow: 0 10px 25px rgba(184, 134, 11, 0.4); 
+  filter: brightness(1.2); /* Makes the metallic look "pop" on hover */
 }
 
+/* Refined disabled state - maintaining the luxury feel even when inactive */
 .form-submit-btn.disabled {
   opacity: 0.6;
   cursor: not-allowed;
-  background: #ccc;
+  /* Replaced flat grey with a desaturated, muted metallic tone */
+  background: linear-gradient(to right, #a8a8a8 0%, #d1d1d1 100%); 
+  color: #666;
+  box-shadow: none;
 }
 
 .loading-spinner {
