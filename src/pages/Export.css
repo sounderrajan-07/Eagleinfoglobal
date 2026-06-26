@@ -89,7 +89,7 @@
 }
 
 .export-hero-title {
-font-size: clamp(1rem, 4vw, 3rem);
+font-size: clamp(1.2rem, 4vw, 6rem);
 white-space: nowrap;
 overflow: visible;
 text-overflow: unset;
