@@ -28,46 +28,40 @@
 }
 
 /* -------------------------------------------
-   UPDATED: Full-Screen Floating Low-Poly Mesh
-   (Gently drifts and bobs organically in place)
+   UPDATED: Liquid Wobble / Wave Mesh Overlay
 ------------------------------------------- */
 .low-poly-mesh-overlay {
   position: absolute;
-  /* Oversized slightly so edges don't show when it drifts */
-  inset: -30px; 
+  inset: 0;
   z-index: 2;
   pointer-events: none;
 
-  /* Full-screen seamless geometric pattern */
+  /* The same perfect low-poly pattern */
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cpolygon points='0,0 60,0 30,60' fill='rgba(255,255,255,0.15)'/%3E%3Cpolygon points='60,0 120,0 90,60' fill='rgba(255,255,255,0.05)'/%3E%3Cpolygon points='60,0 90,60 30,60' fill='rgba(255,255,255,0.25)'/%3E%3Cpolygon points='0,0 30,60 0,120' fill='rgba(255,255,255,0.02)'/%3E%3Cpolygon points='120,0 120,120 90,60' fill='rgba(255,255,255,0.1)'/%3E%3Cpolygon points='0,120 60,120 30,60' fill='rgba(255,255,255,0.2)'/%3E%3Cpolygon points='60,120 120,120 90,60' fill='rgba(255,255,255,0.08)'/%3E%3Cpolygon points='60,120 90,60 30,60' fill='rgba(255,255,255,0.12)'/%3E%3C/svg%3E");
   background-size: 150px 150px;
   background-repeat: repeat;
 
-  /* The glass blur overlay style */
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
 
-  /* Multi-directional physics loop.
-     Using ease-in-out makes the floating motion look incredibly natural.
+  /* 1. INJECTING THE LIVE WOBBLE FILTER:
+    We generate a moving fluid noise map directly inside the CSS url.
   */
-  animation: meshNaturalFloat 8s ease-in-out infinite;
+  filter: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="wobble"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.015" numOctaves="1" result="noise"%3E%3Canimate attributeName="baseFrequency" values="0.015;0.022;0.015" dur="10s" repeatCount="indefinite"/%3E%3C/feTurbulence%3E%3CfeDisplacementMap in="SourceGraphic" in2="noise" scale="25" xChannelSelector="R" yChannelSelector="G"/%3E%3C/filter%3E%3C/filter%3E%3C/svg%3E#wobble') blur(6px);
+
+  /* 2. GENTLE DRIFT:
+    Combines the inner fluid wobble with a slow background shift for maximum depth.
+  */
+  animation: liquidMeshPan 12s ease-in-out infinite alternate;
 }
 
-/* Hardware-accelerated keyframes that simulate fluid drifting.
-   It bobs up/down, shifts side-to-side, and micro-rotates seamlessly.
-*/
-@keyframes meshNaturalFloat {
+/* Slowly shifts the coordinates back and forth so the wave moves across the geometry */
+@keyframes liquidMeshPan {
   0% {
-    transform: translate3d(0, 0, 0) rotate(0deg);
-  }
-  33% {
-    transform: translate3d(12px, -10px, 0) rotate(0.4deg);
-  }
-  66% {
-    transform: translate3d(-8px, 12px, 0) rotate(-0.4deg);
+    background-position: 0% 0%;
   }
   100% {
-    transform: translate3d(0, 0, 0) rotate(0deg);
+    background-position: 40px 20px;
   }
 }
 /* Ensure text stays on top */
