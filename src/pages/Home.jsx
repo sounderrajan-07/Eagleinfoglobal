@@ -127,7 +127,7 @@ function Home() {
             }`}
           >
             <div className="bulb-image-wrapper">
-              <img src="/images/about/bulb-transparent.png" alt="Innovation and Ideas" className="bulb-image" />
+              <img src="/images/about/bulb-transparent1.png" alt="Innovation and Ideas" className="bulb-image" />
             </div>
             <div className="bulb-text-wrapper">
               <h2 className="bulb-title">Lighting the Path to Success</h2>
