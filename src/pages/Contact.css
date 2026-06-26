@@ -358,15 +358,16 @@ font-family: 'Times New Roman', Times, serif !important;
 }
 .form-submit-btn {
   width: 100%;
-  /* We use 5 color stops to create a seamless, professional metallic blend */
-  background: linear-gradient(
-    90deg, 
-    #d4af37 0%, 
-    #eec555 25%, 
-    #b8860b 50%, 
-    #eec555 75%, 
-    #d4af37 100%
-  );
+  
+  /* 1. Core metallic gradient */
+  /* 2. Noise texture overlay (using the SVG data URI) */
+  background: 
+    linear-gradient(90deg, #d4af37 0%, #eec555 25%, #b8860b 50%, #eec555 75%, #d4af37 100%),
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  
+  /* Blends the noise with the metallic colors for a brushed finish */
+  background-blend-mode: overlay;
+  
   color: var(--dark-navy);
   border: none;
   padding: 18px 30px;
@@ -378,19 +379,18 @@ font-family: 'Times New Roman', Times, serif !important;
   margin-top: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
+
 .form-submit-btn:hover:not(.disabled) {
-  /* Retains your 3D rotate effect */
   transform: translateY(-3px) rotateX(5deg);
-  /* Exact color match for the original gold glow */
   box-shadow: 0 10px 20px rgba(212, 175, 55, 0.5);
-  /* Subtle brightness shift for that metallic sheen */
-  filter: brightness(1.1);
+  /* Boost contrast/brightness for the sheen */
+  filter: brightness(1.15) contrast(1.05);
 }
 
 .form-submit-btn.disabled {
   opacity: 0.6;
   cursor: not-allowed;
-  /* A muted metallic grey that feels "disabled" but still premium */
+  /* Muted metallic grey background */
   background: linear-gradient(90deg, #a0a0a0 0%, #808080 100%);
   color: #f0f0f0;
   box-shadow: none;
