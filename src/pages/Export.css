@@ -89,11 +89,10 @@
 }
 
 .export-hero-title {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-
-  font-size: clamp(1rem, 6vw, 4rem) !important;
+font-size: clamp(1rem, 4vw, 3rem);
+white-space: nowrap;
+overflow: visible;
+text-overflow: unset;
 
   display: block !important;
   text-align: center;
