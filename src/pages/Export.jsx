@@ -245,9 +245,13 @@ function Export() {
 
   return (
     <div className="export">
-      {/* Hero Section */}
+     {/* Hero Section */}
       <section className="export-hero">
-        <div className="about-hero-background">
+        <div className="export-hero-background">
+          
+          {/* Exact full-screen low-poly mesh overlay from image_bb97be.png */}
+          <div className="low-poly-mesh-overlay"></div>
+
           <div className="floating-shapes">
             <div className="eagle-image">
               <img src="../images/eagle.png" alt="Eagle" />
@@ -303,7 +307,6 @@ function Export() {
           </div>
         </div>
       </section>
-
      <section 
         id="global-trade-monitor"
         className="trade-section"
