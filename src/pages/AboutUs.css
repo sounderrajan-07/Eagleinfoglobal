@@ -8,13 +8,13 @@
   padding: 0 20px;
 }
 
-/* Hero Section */
+/* Existing Hero Section Styles */
 .about-hero {
-min-height: 70vh; /* Changed from 140vh to fit the screen */
+  min-height: 70vh; 
   position: relative;
   display: flex;
-  align-items: center;      /* Vertically centers the content */
-  justify-content: center;   /* Horizontally centers the content */
+  align-items: center;      
+  justify-content: center;  
   background: linear-gradient(135deg, var(--premium-dark-blue) 0%, var(--dark-navy) 100%);
   color: var(--white);
   overflow: hidden;
@@ -24,7 +24,92 @@ min-height: 70vh; /* Changed from 140vh to fit the screen */
 .about-hero-background {
   position: absolute;
   inset: 0;
-  z-index: 2;
+  z-index: 1; /* Pushed to back so text is clickable */
+}
+
+/* -------------------------------------------
+   NEW: Geometric Glass Shards Effect
+------------------------------------------- */
+.geometric-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2; /* Sits above the gradient, below the content */
+  overflow: hidden;
+  pointer-events: none; /* Ensures the shards don't block clicks on content */
+}
+
+/* Base styles for all geometric shards */
+.shard {
+  position: absolute;
+  /* Semi-transparent white gradient for the glass look */
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.05) 100%);
+  /* Creates the frosted glass blur effect */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  /* Subtle border to define the edges like in the image */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  /* Smooth floating animation */
+  animation: floatShard 15s infinite alternate ease-in-out;
+}
+
+/* Keyframes for a gentle floating motion */
+@keyframes floatShard {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  50% { transform: translate(-15px, 15px) rotate(3deg); }
+  100% { transform: translate(15px, -15px) rotate(-3deg); }
+}
+
+/* Individual Shard Sizes, Positions, and Clip-Paths (Triangles) */
+.shard-1 {
+  width: 250px; height: 250px;
+  top: 15%; left: 25%;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%); /* Upward Triangle */
+  animation-duration: 12s;
+}
+
+.shard-2 {
+  width: 350px; height: 350px;
+  top: 30%; left: 35%;
+  clip-path: polygon(0 0, 100% 50%, 0 100%); /* Right-pointing Triangle */
+  animation-duration: 18s;
+  animation-delay: -5s; /* Starts at a different animation phase */
+}
+
+.shard-3 {
+  width: 200px; height: 200px;
+  top: 55%; left: 20%;
+  clip-path: polygon(100% 0, 0 100%, 100% 100%); /* Bottom-right Triangle */
+  animation-duration: 14s;
+  animation-delay: -2s;
+}
+
+.shard-4 {
+  width: 280px; height: 280px;
+  top: 20%; left: 55%;
+  clip-path: polygon(50% 100%, 0 0, 100% 0); /* Downward Triangle */
+  animation-duration: 20s;
+  animation-delay: -8s;
+}
+
+.shard-5 {
+  width: 150px; height: 150px;
+  top: 60%; left: 65%;
+  clip-path: polygon(0% 0%, 100% 50%, 50% 100%); /* Angled Triangle */
+  animation-duration: 16s;
+  animation-delay: -11s;
+}
+
+.shard-6 {
+  width: 180px; height: 180px;
+  top: 40%; left: 60%;
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%); /* Diamond */
+  animation-duration: 15s;
+}
+
+/* Ensures content sits above the background and overlay */
+.container {
+  position: relative;
+  z-index: 10;
 }
 
 .floating-shapes {
