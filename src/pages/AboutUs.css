@@ -28,52 +28,51 @@
 }
 
 /* -------------------------------------------
-   UPDATED: Sweeping Fluid Glass Wave 
-   (Liquid wave form that sweeps every 2s)
+   FIXED: Smooth Geometric Wave Sweep
+   (Image stays crisp, wave shape sweeps every 2s)
 ------------------------------------------- */
 .low-poly-mesh-overlay {
   position: absolute;
   top: 0;
   height: 100%;
-  /* Width of the traveling wave band */
-  width: 50%; 
+  width: 100%; /* Back to full container layout scale */
   z-index: 2;
   pointer-events: none;
 
-  /* The low-poly mesh pattern contained inside the wave */
+  /* The low-poly mesh pattern remains completely clean and normal */
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cpolygon points='0,0 60,0 30,60' fill='rgba(255,255,255,0.15)'/%3E%3Cpolygon points='60,0 120,0 90,60' fill='rgba(255,255,255,0.05)'/%3E%3Cpolygon points='60,0 90,60 30,60' fill='rgba(255,255,255,0.25)'/%3E%3Cpolygon points='0,0 30,60 0,120' fill='rgba(255,255,255,0.02)'/%3E%3Cpolygon points='120,0 120,120 90,60' fill='rgba(255,255,255,0.1)'/%3E%3Cpolygon points='0,120 60,120 30,60' fill='rgba(255,255,255,0.2)'/%3E%3Cpolygon points='60,120 120,120 90,60' fill='rgba(255,255,255,0.08)'/%3E%3Cpolygon points='60,120 90,60 30,60' fill='rgba(255,255,255,0.12)'/%3E%3C/svg%3E");
   background-size: 150px 150px;
   background-repeat: repeat;
 
-  background-color: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
+  /* Premium glass glow layers */
+  background-color: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
 
-  /* 1. FLUID WAVAFORM MASK:
-     Applies a dynamic, shifting fractal noise map that warps the borders 
-     of the traveling element into organic fluid ripples.
+  /* Creates a smooth, beautiful vertical sinus wave shape.
+     The image texture inside is perfectly crisp, but the visibility wave mask itself moves.
   */
-  filter: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="wave-warp"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.02 0.05" numOctaves="2" result="noise"%3E%3Canimate attributeName="baseFrequency" values="0.02 0.05;0.02 0.08;0.02 0.05" dur="2s" repeatCount="indefinite"/%3E%3C/feTurbulence%3E%3CfeDisplacementMap in="SourceGraphic" in2="noise" scale="45" xChannelSelector="R" yChannelSelector="G"/%3E%3C/filter%3E%3C/filter%3E%3C/svg%3E#wave-warp');
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 15%, black 35%, transparent 50%);
+  mask-image: linear-gradient(to right, transparent 0%, black 15%, black 35%, transparent 50%);
+  mask-size: 200% 100%;
 
-  /* 2. EDGE SMOOTHING:
-     Blends the sides out softly so it feels like a beam of light.
-  */
-  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 25%, black 75%, transparent 100%);
-  mask-image: linear-gradient(to right, transparent 0%, black 25%, black 75%, transparent 100%);
-
-  /* Sweeps across the viewport every 2 seconds */
-  animation: liquidWaveSweep 2s infinite linear;
+  /* Seamless hardware-accelerated fluid motion timeline */
+  animation: smoothClippedWave 2s infinite linear;
 }
 
-/* Keyframe animation to translate the warped wave.
-   We removed the harsh skewX and let the fractal filter build the wave contours naturally.
+/* Moves the mask horizontally across the sections. 
+   Using translate3d and mask-position keeps rendering locked at a silky smooth 60fps.
 */
-@keyframes liquidWaveSweep {
+@keyframes smoothClippedWave {
   0% {
-    transform: translate3d(-110%, 0, 0);
+    mask-position: 150% 0%;
+    -webkit-mask-position: 150% 0%;
+    transform: translate3d(-10%, 0, 0);
   }
   100% {
-    transform: translate3d(220%, 0, 0);
+    mask-position: -50% 0%;
+    -webkit-mask-position: -50% 0%;
+    transform: translate3d(10%, 0, 0);
   }
 }
 /* Ensure text stays on top */
