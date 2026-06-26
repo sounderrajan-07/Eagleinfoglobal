@@ -160,69 +160,73 @@ function Land() {
 
 return (
     <div className="land">
-      {/* Hero Section */}
-<section className="land-hero">
-  <div className="about-hero-background">
-    <div className="floating-shapes">
-      <div className="eagle-image">
-        <img src="/images/eagle.png" alt="Eagle" />
-      </div>
-    </div>
-  </div>
+{/* Hero Section */}
+      <section className="land-hero">
+        <div className="land-hero-background">
+          
+          {/* Same perfect full-screen low-poly mesh overlay */}
+          <div className="low-poly-mesh-overlay"></div>
 
-  <div className="container">
-    <div className="hero-content-grid">
-      <div 
-        id="animate-hero-content"
-        className={`hero-content ${isVisible['animate-hero-content'] ? 'animate-fade-up' : ''}`}
-      >
-        <div className="flip-container">
-          <h1 className="land-hero-title">Land Development & Investment</h1>
-        </div>
-
-        <p className="hero-subtitle">
-          Transform raw land into valuable assets with our comprehensive <br />
-          development and investment services.
-        </p>
-
-        <div className="hero-features">
-          <div className="feature-item">
-            <span className="feature-icon">
-              <img src="/images/Land/expert.jpg" alt="Strategic Planning" />
-            </span>
-            <span className="feature-text">Strategic Planning</span>
-          </div>
-
-          <div className="feature-item">
-            <span className="feature-icon">
-              <img src="/images/Land/investment.jpg" alt="Investment Analysis" />
-            </span>
-            <span className="feature-text">Investment Analysis</span>
-          </div>
-
-          <div className="feature-item">
-            <span className="feature-icon">
-              <img src="/images/Land/land.jpg" alt="Full Development" />
-            </span>
-            <span className="feature-text">Full Development</span>
-          </div>
-
-          <div className="feature-item">
-            <span className="feature-icon">
-              <img src="/images/Land/value.jpg" alt="Value Maximization" />
-            </span>
-            <span className="feature-text">Value Maximization</span>
+          <div className="floating-shapes">
+            <div className="eagle-image">
+              <img src="/images/eagle.png" alt="Eagle" />
+            </div>
           </div>
         </div>
 
-        <div className="hero-buttons">
-          <button className="btn1-primary">Explore Opportunities</button>
-          <button className="btn2-secondary">Download Portfolio</button>
+        <div className="container">
+          <div className="hero-content-grid">
+            <div 
+              id="animate-hero-content"
+              className={`hero-content ${isVisible['animate-hero-content'] ? 'animate-fade-up' : ''}`}
+            >
+              <div className="flip-container">
+                <h1 className="land-hero-title">Land Development & Investment</h1>
+              </div>
+
+              <p className="hero-subtitle">
+                Transform raw land into valuable assets with our comprehensive <br />
+                development and investment services.
+              </p>
+
+              <div className="hero-features">
+                <div className="feature-item">
+                  <span className="feature-icon">
+                    <img src="/images/Land/expert.jpg" alt="Strategic Planning" />
+                  </span>
+                  <span className="feature-text">Strategic Planning</span>
+                </div>
+
+                <div className="feature-item">
+                  <span className="feature-icon">
+                    <img src="/images/Land/investment.jpg" alt="Investment Analysis" />
+                  </span>
+                  <span className="feature-text">Investment Analysis</span>
+                </div>
+
+                <div className="feature-item">
+                  <span className="feature-icon">
+                    <img src="/images/Land/land.jpg" alt="Full Development" />
+                  </span>
+                  <span className="feature-text">Full Development</span>
+                </div>
+
+                <div className="feature-item">
+                  <span className="feature-icon">
+                    <img src="/images/Land/value.jpg" alt="Value Maximization" />
+                  </span>
+                  <span className="feature-text">Value Maximization</span>
+                </div>
+              </div>
+
+              <div className="hero-buttons">
+                <button className="btn1-primary">Explore Opportunities</button>
+                <button className="btn2-secondary">Download Portfolio</button>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
+      </section>
      <section id="another-section">
   <h2>City Development Overview</h2>
   <p>
