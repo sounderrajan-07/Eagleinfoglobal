@@ -268,7 +268,7 @@ function Export() {
                 <h1 className="export-hero-title">Global Import & Export Services</h1>
               </div>
               <p className="hero-subtitle">
-                Expand your business globally with our comprehensive export services. From market entry to logistics, we handle every aspect of international trade.
+                Expand your business globally with our comprehensive export services. <br />From market entry to logistics, we handle every aspect of international trade.
               </p>
               <div className="hero-highlights">
                 <div className="highlight-card">
