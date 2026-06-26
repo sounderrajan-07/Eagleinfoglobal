@@ -141,9 +141,13 @@ const handleSubmit = async (e) => {
 
   return (
     <div className="contact">
-      {/* Hero Section */}
+{/* Hero Section */}
       <section className="contact-hero">
-        <div className="about-hero-background">
+        <div className="contact-hero-background">
+          
+          {/* Smooth Geometric Wave Overlay Mask */}
+          <div className="low-poly-mesh-overlay"></div>
+
           <div className="floating-shapes">
             <div className="eagle-image">
               <img src="/images/eagle.png" alt="Eagle" />
