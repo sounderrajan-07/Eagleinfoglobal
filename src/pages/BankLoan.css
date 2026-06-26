@@ -11,7 +11,7 @@
 
 /* Hero Section */
 .loan-hero {
-min-height: 70vh; /* Changed from 140vh to fit the screen */
+  min-height: 70vh; 
   position: relative;
   display: flex;
   align-items: center;      /* Vertically centers the content */
@@ -22,10 +22,62 @@ min-height: 70vh; /* Changed from 140vh to fit the screen */
   text-align: center;        /* Ensures text lines align to the center */
 }
 
-.hero-background {
-    position: absolute;
-  inset: 0; /* Shorthand for top/left/width/height */
+/* Normalized Background Layer Wrapper */
+.loan-hero-background {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+/* -------------------------------------------
+   Smooth Geometric Wave Sweep
+   (Image stays crisp, wave shape sweeps every 2s)
+------------------------------------------- */
+.low-poly-mesh-overlay {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
   z-index: 2;
+  pointer-events: none;
+
+  /* The low-poly mesh pattern remains completely clean and normal */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cpolygon points='0,0 60,0 30,60' fill='rgba(255,255,255,0.15)'/%3E%3Cpolygon points='60,0 120,0 90,60' fill='rgba(255,255,255,0.05)'/%3E%3Cpolygon points='60,0 90,60 30,60' fill='rgba(255,255,255,0.25)'/%3E%3Cpolygon points='0,0 30,60 0,120' fill='rgba(255,255,255,0.02)'/%3E%3Cpolygon points='120,0 120,120 90,60' fill='rgba(255,255,255,0.1)'/%3E%3Cpolygon points='0,120 60,120 30,60' fill='rgba(255,255,255,0.2)'/%3E%3Cpolygon points='60,120 120,120 90,60' fill='rgba(255,255,255,0.08)'/%3E%3Cpolygon points='60,120 90,60 30,60' fill='rgba(255,255,255,0.12)'/%3E%3C/svg%3E");
+  background-size: 150px 150px;
+  background-repeat: repeat;
+
+  /* Premium glass glow configurations */
+  background-color: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+
+  /* Creates the linear gradient sinus mask to hide/reveal the mesh cleanly */
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 15%, black 35%, transparent 50%);
+  mask-image: linear-gradient(to right, transparent 0%, black 15%, black 35%, transparent 50%);
+  mask-size: 200% 100%;
+
+  /* Seamless hardware-accelerated timeline */
+  animation: smoothClippedWave 2s infinite linear;
+}
+
+/* Moves the mask position safely to trigger high-framerate GPU processing */
+@keyframes smoothClippedWave {
+  0% {
+    mask-position: 150% 0%;
+    -webkit-mask-position: 150% 0%;
+    transform: translate3d(-10%, 0, 0);
+  }
+  100% {
+    mask-position: -50% 0%;
+    -webkit-mask-position: -50% 0%;
+    transform: translate3d(10%, 0, 0);
+  }
+}
+
+/* Foreground content container */
+.loan-hero .container {
+  position: relative;
+  z-index: 10;
 }
 /* Common image styling */
 .banking-elements img {
@@ -1402,4 +1454,4 @@ display: flex;             /* Changed from grid to flex for easier centering */
   #loan-calculator-section .video-container {
     height: 250px;
   }
-}
+}
