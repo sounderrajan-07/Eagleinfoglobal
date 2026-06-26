@@ -137,15 +137,20 @@ function Consultancy() {
   return (
     <div className="consultancy">
 
-      {/* Hero */}
-      <section className="consultancy-hero">
-        <div className="about-hero-background">
+     {/* Hero */}
+     <section className="consultancy-hero">
+        <div className="consultancy-hero-background">
+          
+          {/* Exact low-poly mesh overlay from image_bb97be.png */}
+          <div className="low-poly-mesh-overlay"></div>
+
           <div className="floating-shapes">
             <div className="eagle-image">
               <img src="/images/eagle.png" alt="Eagle" />
             </div>
           </div>
         </div>
+        
         <div className="container">
           <div className="hero-content-grid">
             <div
@@ -163,7 +168,6 @@ function Consultancy() {
           </div>
         </div>
       </section>
-
       {/* Business Analytics Section */}
       <section className="business-analytics-section">
         <div className="container">
