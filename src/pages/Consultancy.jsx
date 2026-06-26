@@ -10,7 +10,7 @@ function Consultancy() {
   const consultancyServices = [
     {
       title: "Consultancy Global Carees",
-      icon: "/images/Consultancy/world.jpg",
+      icon: "/images/Consultancy/world.png",
       description: "We connect global talent with international opportunities through expert guidance, seamless placements, and complete career support.",
       features: ["Global Placements", "Expert Guidance", "Personalized Matching", "Hiring Network"],
       benefits: ["Career Growth", "Salary Boost", "Work Permit", "Global Exposure"],
