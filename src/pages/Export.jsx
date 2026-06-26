@@ -203,7 +203,7 @@ function Export() {
       image: "/images/export/coat.jpg"
     },
     {
-      name: "Rajesh Kumar",
+      name: "Rajeshwaran",
       role: "Senior I&E Manager",
       expertise: "High Net Worth Financial Planning",
       experience: "15+ years",
@@ -212,7 +212,7 @@ function Export() {
       image: "/images/export/coat.jpg"
     },
     {
-      name: "Selvam",
+      name: "Siva kumar",
       role: "Legal Advisor",
       expertise: "Madras High Court",
       experience: "18+ years",
