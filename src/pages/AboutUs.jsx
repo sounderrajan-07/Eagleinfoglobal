@@ -105,13 +105,8 @@ function AboutUs() {
       <section className="about-hero">
         <div className="about-hero-background">
           
-          {/* Updated Geometric Overlay */}
-          <div className="geometric-overlay">
-            <div className="glass-plane plane-left"></div>
-            <div className="glass-plane plane-right-top"></div>
-            <div className="glass-plane plane-right-bottom"></div>
-            <div className="glass-plane plane-bottom-left"></div>
-          </div>
+          {/* NEW: Full-screen faceted low-poly mesh */}
+          <div className="low-poly-mesh-overlay"></div>
 
           <div className="floating-shapes">
             <div className="eagle-image">
@@ -135,6 +130,7 @@ function AboutUs() {
         </div>
       </section>
 
+      
       {/* Company Overview Section */}
       <section className="company-overview">
         <div className="container">
