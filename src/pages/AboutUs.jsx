@@ -101,18 +101,16 @@ function AboutUs() {
   return (
     <div className="about-us">
 
-     {/* Hero Section */}
+{/* Hero Section */}
       <section className="about-hero">
         <div className="about-hero-background">
           
-          {/* New Geometric Glass Overlay Effect */}
+          {/* Updated Geometric Overlay */}
           <div className="geometric-overlay">
-            <div className="shard shard-1"></div>
-            <div className="shard shard-2"></div>
-            <div className="shard shard-3"></div>
-            <div className="shard shard-4"></div>
-            <div className="shard shard-5"></div>
-            <div className="shard shard-6"></div>
+            <div className="glass-plane plane-left"></div>
+            <div className="glass-plane plane-right-top"></div>
+            <div className="glass-plane plane-right-bottom"></div>
+            <div className="glass-plane plane-bottom-left"></div>
           </div>
 
           <div className="floating-shapes">
