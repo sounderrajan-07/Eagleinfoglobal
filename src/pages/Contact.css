@@ -358,20 +358,16 @@ font-family: 'Times New Roman', Times, serif !important;
 }
 .form-submit-btn {
   width: 100%;
-  
-  /* 1. Core metallic gradient */
-  /* 2. Noise texture overlay (using the SVG data URI) */
-  background: 
-    linear-gradient(90deg, #d4af37 0%, #eec555 25%, #b8860b 50%, #eec555 75%, #d4af37 100%),
-    url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-  
-  /* Blends the noise with the metallic colors for a brushed finish */
-  background-blend-mode: overlay;
+  /* Force the image to fill the entire button area perfectly */
+  background-image: url('../images/btn.jpg');
+  background-size: 100% 100%; 
+  background-repeat: no-repeat;
+  background-position: center;
   
   color: var(--dark-navy);
   border: none;
   padding: 18px 30px;
-  border-radius: 10px;
+  border-radius: 10px; /* This ensures the rectangle has rounded corners */
   font-weight: 700;
   font-size: 1.1rem;
   cursor: pointer;
@@ -383,15 +379,13 @@ font-family: 'Times New Roman', Times, serif !important;
 .form-submit-btn:hover:not(.disabled) {
   transform: translateY(-3px) rotateX(5deg);
   box-shadow: 0 10px 20px rgba(212, 175, 55, 0.5);
-  /* Boost contrast/brightness for the sheen */
-  filter: brightness(1.15) contrast(1.05);
+  filter: brightness(1.1); /* Adds a slight sheen effect on hover */
 }
 
 .form-submit-btn.disabled {
   opacity: 0.6;
   cursor: not-allowed;
-  /* Muted metallic grey background */
-  background: linear-gradient(90deg, #a0a0a0 0%, #808080 100%);
+  background: #a0a0a0; /* Fallback for disabled state */
   color: #f0f0f0;
   box-shadow: none;
 }
