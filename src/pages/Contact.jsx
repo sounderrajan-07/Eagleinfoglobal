@@ -160,7 +160,8 @@ const handleSubmit = async (e) => {
               <h1 className="contact-hero-title">Get In Touch</h1>
             </div>
             <p className="contact-hero-subtitle">
-              Ready to transform your business? Let's start the conversation today.
+              Ready to transform your business?<br />
+              Let's start the conversation today.
             </p>
           </div>
         </div>
