@@ -28,51 +28,46 @@
 }
 
 /* -------------------------------------------
-   UPDATED: Sweeping Low-Poly Glass Wave
-   (Sweeps left-to-right every 2 seconds)
+   UPDATED: Full-Screen Floating Low-Poly Mesh
+   (Gently drifts and bobs organically in place)
 ------------------------------------------- */
 .low-poly-mesh-overlay {
   position: absolute;
-  top: 0;
-  height: 100%;
-  /* Controls the thickness of the moving wave band */
-  width: 45%; 
+  /* Oversized slightly so edges don't show when it drifts */
+  inset: -30px; 
   z-index: 2;
   pointer-events: none;
 
-  /* The same interlocking SVG triangle pattern */
+  /* Full-screen seamless geometric pattern */
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cpolygon points='0,0 60,0 30,60' fill='rgba(255,255,255,0.15)'/%3E%3Cpolygon points='60,0 120,0 90,60' fill='rgba(255,255,255,0.05)'/%3E%3Cpolygon points='60,0 90,60 30,60' fill='rgba(255,255,255,0.25)'/%3E%3Cpolygon points='0,0 30,60 0,120' fill='rgba(255,255,255,0.02)'/%3E%3Cpolygon points='120,0 120,120 90,60' fill='rgba(255,255,255,0.1)'/%3E%3Cpolygon points='0,120 60,120 30,60' fill='rgba(255,255,255,0.2)'/%3E%3Cpolygon points='60,120 120,120 90,60' fill='rgba(255,255,255,0.08)'/%3E%3Cpolygon points='60,120 90,60 30,60' fill='rgba(255,255,255,0.12)'/%3E%3C/svg%3E");
   background-size: 150px 150px;
   background-repeat: repeat;
 
-  /* A very faint white light color to make the wave "catch" the illumination */
-  background-color: rgba(255, 255, 255, 0.02);
+  /* The glass blur overlay style */
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
 
-  /* The glass morphic frost effect that sweeps over the background */
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-
-  /* 
-     Fades the left and right edges of the wave band 
-     so it doesn't look like a harsh moving box 
+  /* Multi-directional physics loop.
+     Using ease-in-out makes the floating motion look incredibly natural.
   */
-  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 30%, black 70%, transparent 100%);
-  mask-image: linear-gradient(to right, transparent 0%, black 30%, black 70%, transparent 100%);
-
-  /* 2-second infinite hardware-accelerated loop */
-  animation: meshWaveSweep 2s infinite linear;
+  animation: meshNaturalFloat 8s ease-in-out infinite;
 }
 
-/* 
-   Keyframe animation to translate the wave across the viewport 
-   Includes a skewX to give the wave a premium, dynamic diagonal angle
+/* Hardware-accelerated keyframes that simulate fluid drifting.
+   It bobs up/down, shifts side-to-side, and micro-rotates seamlessly.
 */
-@keyframes meshWaveSweep {
+@keyframes meshNaturalFloat {
   0% {
-    transform: translate3d(-120%, 0, 0) skewX(-20deg);
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  33% {
+    transform: translate3d(12px, -10px, 0) rotate(0.4deg);
+  }
+  66% {
+    transform: translate3d(-8px, 12px, 0) rotate(-0.4deg);
   }
   100% {
-    transform: translate3d(250%, 0, 0) skewX(-20deg);
+    transform: translate3d(0, 0, 0) rotate(0deg);
   }
 }
 /* Ensure text stays on top */
