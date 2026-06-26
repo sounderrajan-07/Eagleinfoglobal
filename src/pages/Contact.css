@@ -358,8 +358,15 @@ font-family: 'Times New Roman', Times, serif !important;
 }
 .form-submit-btn {
   width: 100%;
-  /* These are the exact high-end bronze/gold values */
-  background: linear-gradient(90deg, #d4af37 0%, #a67c00 50%, #d4af37 100%);
+  /* We use 5 color stops to create a seamless, professional metallic blend */
+  background: linear-gradient(
+    90deg, 
+    #d4af37 0%, 
+    #eec555 25%, 
+    #b8860b 50%, 
+    #eec555 75%, 
+    #d4af37 100%
+  );
   color: var(--dark-navy);
   border: none;
   padding: 18px 30px;
@@ -368,12 +375,9 @@ font-family: 'Times New Roman', Times, serif !important;
   font-size: 1.1rem;
   cursor: pointer;
   transition: all 0.4s ease;
-  transform: translateY(0);
   margin-top: 10px;
-  /* Crisp, professional shadow */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
-
 .form-submit-btn:hover:not(.disabled) {
   /* Retains your 3D rotate effect */
   transform: translateY(-3px) rotateX(5deg);
