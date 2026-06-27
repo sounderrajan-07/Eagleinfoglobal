@@ -1236,15 +1236,16 @@ img {
   height: 100%;
   object-fit: contain;
   display: block;
-  animation: rotateRupee 8s linear infinite;
+  animation: rotateRupee 12s linear infinite;
+  transform-style: preserve-3d;
 }
 
 @keyframes rotateRupee {
-  0% {
-    transform: rotateX(0deg);
+  from {
+    transform: rotateY(0deg);
   }
-  100% {
-    transform: rotateX(360deg);
+  to {
+    transform: rotateY(360deg);
   }
 }
 
