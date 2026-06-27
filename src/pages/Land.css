@@ -568,7 +568,7 @@ p{
 }
 .project-image {
   position: relative;
-  height: 300px;
+  height: 480px;
   overflow: hidden;
 }
 
@@ -1194,7 +1194,7 @@ p{
 
   /* Projects */
   .project-image {
-    height: 220px;
+    height: 280px;
   }
 
   .project-info {
