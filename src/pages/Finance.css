@@ -1222,6 +1222,7 @@ img {
   min-height: 450px;
   overflow: hidden;
   background: transparent;
+  perspective: 1000px;
 }
 
 #portfolio-dashboard .video-container video {
@@ -1236,7 +1237,7 @@ img {
   height: 100%;
   object-fit: contain;
   display: block;
-  animation: rotateRupee 4s linear infinite !important;
+  animation: rotateRupee 12s linear infinite !important;
   transform-style: preserve-3d;
   transition: none !important;
 }
