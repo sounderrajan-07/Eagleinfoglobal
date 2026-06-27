@@ -1236,8 +1236,9 @@ img {
   height: 100%;
   object-fit: contain;
   display: block;
-  animation: rotateRupee 12s linear infinite;
+  animation: rotateRupee 12s linear infinite !important;
   transform-style: preserve-3d;
+  transition: none !important;
 }
 
 @keyframes rotateRupee {
