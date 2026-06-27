@@ -1236,18 +1236,15 @@ img {
   height: 100%;
   object-fit: contain;
   display: block;
-  animation: floatRupee 5s ease-in-out infinite;
+  animation: rotateRupee 8s linear infinite;
 }
 
-@keyframes floatRupee {
+@keyframes rotateRupee {
   0% {
-    transform: translateY(0px) rotate(0deg);
-  }
-  50% {
-    transform: translateY(-15px) rotate(3deg);
+    transform: rotateY(0deg);
   }
   100% {
-    transform: translateY(0px) rotate(0deg);
+    transform: rotateY(360deg);
   }
 }
 
