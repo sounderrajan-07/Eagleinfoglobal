@@ -6,15 +6,6 @@ function Finance() {
   const [isVisible, setIsVisible] = useState({});
   const [activeCalculator, setActiveCalculator] = useState('loan');
   const navigate = useNavigate();
-  const videoRef = useRef(null);
-
-  useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.play().catch(err => {
-        console.warn("Mount video play failed:", err);
-      });
-    }
-  }, []);
 
   const [calculatorValues, setCalculatorValues] = useState({
     loanAmount: 100000,
@@ -123,7 +114,7 @@ function Finance() {
       image: "/images/Finance/coat.jpg"
     },
     {
-      name: "Siva kumar",
+      name: "Sivakumar",
       role: "Legal Advisor",
       expertise: "Madras High Court",
       experience: "18+ years",
@@ -212,7 +203,7 @@ return (
         </div>
 
         <p className="hero-subtitle">
-          Comprehensive financial services to help you build, grow, and protect your wealth with expert guidance and innovative solutions.
+          Comprehensive financial services to help you build, grow, and protect your <br/>wealth with expert guidance and innovative solutions.
         </p>
 
         <div className="hero-stats">
@@ -242,25 +233,13 @@ return (
 </section>
 <section id="portfolio-dashboard">
   <div className="container portfolio-layout-wrapper">
-    {/* LEFT SIDE - VIDEO */}
+    {/* LEFT SIDE - IMAGE ANIMATION */}
     <div className="portfolio-left-video">
       <div className="video-container">
-        <video
-          ref={videoRef}
-          src="/videos/Finance_animation.webm"
-          autoPlay
-          muted
-          loop
-          playsInline
-          onLoadedMetadata={() => {
-            if (videoRef.current) {
-              videoRef.current.play().catch(err => console.warn("Video play failed:", err));
-            }
-          }}
-          onEnded={(e) => {
-            e.target.currentTime = 0;
-            e.target.play().catch(() => {});
-          }}
+        <img
+          src="/images/Finance/rupeeanimation.png"
+          alt="Portfolio Performance Animation"
+          className="rupee-animation-img"
         />
       </div>
     </div>

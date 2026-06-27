@@ -130,7 +130,7 @@ function Home() {
             <div className="bulb-text-wrapper">
               <h2 className="bulb-title">Lighting the Path to Success</h2>
               <p className="bulb-description">
-                We bring bright ideas and innovative strategies to illuminate your business potential. Let our expert guidance be the catalyst for your next big breakthrough.
+                We bring bright ideas and innovative strategies to illuminate your business potential. <br />Let our expert guidance be the catalyst for your next big breakthrough.
               </p>
             </div>
           </div>
